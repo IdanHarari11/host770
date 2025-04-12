@@ -54,7 +54,7 @@ const Location = () => {
                 </div>
               )}
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13526.31023249798!2d35.53114533406994!3d32.606318399999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151c475c99058dc1%3A0x4f1da8e2d0cd312c!2z15DXldee158!5e0!3m2!1siw!2sil!4v1711394408398!5m2!1siw!2sil" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3383.1471392279717!2d35.5364223!3d32.5952775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151c47e0e64a0ba1%3A0x8f99d7b9ae7c96c3!2z157Xldep15Eg15DXldee158!5e0!3m2!1siw!2sil!4v1711438888899!5m2!1siw!2sil" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
@@ -80,7 +80,7 @@ const Location = () => {
           </p>
           
           <Button 
-            onClick={() => window.open('https://maps.google.com/?q=oman+israel', '_blank')}
+            onClick={() => window.open('https://maps.google.com/?q=מושב+אומן+ישראל', '_blank')}
             className="mb-8"
           >
             <div className="flex items-center gap-2">
@@ -95,20 +95,22 @@ const Location = () => {
             {attractions.map((attraction, index) => (
               <motion.div 
                 key={index}
-                className="bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow"
+                className="bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow h-[120px] flex"
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="flex items-start gap-3">
+                <div className="flex items-start gap-3 w-full">
                   <div className="text-[#4caf50] text-2xl mt-1">{attraction.icon}</div>
-                  <div>
-                    <div className="flex items-center justify-between">
-                      <h4 className="font-bold">{attraction.title}</h4>
-                      <span className="text-sm text-gray-500">{attraction.distance}</span>
+                  <div className="w-full flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center justify-between">
+                        <h4 className="font-bold">{attraction.title}</h4>
+                        <span className="text-sm text-gray-500 mr-auto ml-2">{attraction.distance}</span>
+                      </div>
+                      <p className="text-gray-600 text-sm line-clamp-2">{attraction.description}</p>
                     </div>
-                    <p className="text-gray-600 text-sm">{attraction.description}</p>
                   </div>
                 </div>
               </motion.div>
