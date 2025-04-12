@@ -1,26 +1,47 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary-color: #4caf50;
+  --secondary-color: #87ceeb;
+  --accent-color: #f5f5dc;
+  --text-color: #333333;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  direction: rtl;
+  text-align: right;
+  scroll-behavior: smooth;
 }
+
+@layer components {
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .container-padding {
+    @apply px-4 md:px-8;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-center;
+  }
+  
+  .section-subtitle {
+    @apply text-xl md:text-2xl font-medium mb-12 text-center text-gray-600;
+  }
+  
+  .button-primary {
+    @apply bg-[#4caf50] hover:bg-[#43a047] text-white font-bold py-3 px-6 rounded-2xl shadow-md transition-all duration-300 text-lg;
+  }
+  
+  .button-secondary {
+    @apply bg-white hover:bg-gray-100 text-[#4caf50] border border-[#4caf50] font-bold py-3 px-6 rounded-2xl shadow-md transition-all duration-300 text-lg;
+  }
+
+  .card {
+    @apply bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300;
+  }
+} 
