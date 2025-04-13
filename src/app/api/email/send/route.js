@@ -49,7 +49,8 @@ export async function POST(request) {
         return Response.json({ 
           success: true, 
           customerMessageId: customerResult.messageId,
-          adminMessageId: adminResult.messageId
+          adminMessageId: adminResult.messageId,
+          bookingDetails
         });
       } else {
         return Response.json({ 

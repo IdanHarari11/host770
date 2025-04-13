@@ -71,7 +71,7 @@ const Location = () => {
             <ul className="space-y-3">
               <li className="flex gap-2">
                 <span className="font-bold">Contact:</span>
-                <span>Yair</span>
+                <span>Jacob</span>
               </li>
               <li className="flex gap-2">
                 <span className="font-bold">Phone:</span>

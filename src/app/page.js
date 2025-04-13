@@ -21,9 +21,8 @@ export default function Home() {
         </p>
         <h2>Modern Design & Fully Furnished Apartments</h2>
         <h2>Ideal Location in Fort Lauderdale</h2>
-        <h2>Daily Rate: $120 / Monthly Rate: $3,000</h2>
         <h3>Building Features Include Pool, Gym & Kosher Dining</h3>
-        <h2>Contact Yair at 954-319-7577 to Book Your Stay</h2>
+        <h2>Contact Jacob at 954-319-7577 to Book Your Stay</h2>
       </div>
       
       <Hero />

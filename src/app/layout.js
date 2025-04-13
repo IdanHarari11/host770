@@ -147,14 +147,6 @@ export default function RootLayout({ children }) {
                 },
                 {
                   "@type": "Question",
-                  "name": "What is the pricing for the apartments?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Daily price is $120 and monthly price is $3,000."
-                  }
-                },
-                {
-                  "@type": "Question",
                   "name": "Who are these apartments suitable for?",
                   "acceptedAnswer": {
                     "@type": "Answer",

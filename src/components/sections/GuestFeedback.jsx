@@ -45,7 +45,7 @@ const GuestFeedback = () => {
       name: 'Rebecca',
       date: 'March 2024',
       rating: 5,
-      text: 'Clean, well-maintained and luxurious place. Yair is an excellent host and takes care of every need. Highly recommended!'
+      text: 'Clean, well-maintained and luxurious place. Jacob is an excellent host and takes care of every need. Highly recommended!'
     },
     {
       id: 6,

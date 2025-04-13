@@ -14,15 +14,12 @@ const VillaDetails = () => {
       capacity: 4,
       bedrooms: 2,
       bathrooms: 1,
-      dailyPrice: 120,
-      monthlyPrice: 3000,
       features: [
         { icon: <FaBed />, text: '2 Bedrooms' },
         { icon: <FaBath />, text: 'Large Central Bathroom' },
         { icon: <FaUtensils />, text: 'Fully Equipped Kitchen' },
         { icon: <FaTemperatureHigh />, text: 'Climate Control' },
         { icon: <FaWifi />, text: 'Free WiFi' },
-        { icon: <FaDollarSign />, text: 'Daily: $120 / Monthly: $3,000' },
       ]
     },
   ];
