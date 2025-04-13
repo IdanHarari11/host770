@@ -119,8 +119,7 @@ const Location = () => {
           </div>
 
           {/* Location Images */}
-          <h3 className="text-xl font-bold mt-8 mb-4">תמונות מהאזור</h3>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-3 pt-6">
             <motion.div
               className="rounded-xl overflow-hidden aspect-[4/3]"
               initial={{ opacity: 0, y: 20 }}
@@ -130,7 +129,7 @@ const Location = () => {
             >
               <div className="relative w-full h-full">
                 <Image 
-                  src="/image/WhatsApp Image 2025-04-09 at 09.26.54.jpeg" 
+                  src="/image/WhatsApp Image 2025-04-13 at 06.43.27.jpeg" 
                   alt="כניסה לוילה אורית בגלבוע" 
                   fill
                   loading="lazy"
