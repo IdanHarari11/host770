@@ -6,8 +6,8 @@ import { motion } from 'framer-motion';
 import Button from '../ui/Button';
 
 const backgroundImages = [
-  '/image/WhatsApp Image 2025-04-09 at 09.27.31.jpeg',
   '/image/WhatsApp Image 2025-04-09 at 09.25.29.jpeg',
+  '/image/WhatsApp Image 2025-04-09 at 09.27.31.jpeg',
   '/image/WhatsApp Image 2025-04-09 at 09.27.27.jpeg',
   '/image/WhatsApp Image 2025-04-09 at 09.27.13.jpeg',
   '/image/WhatsApp Image 2025-04-09 at 09.25.29.jpeg',
