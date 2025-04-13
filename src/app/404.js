@@ -22,18 +22,18 @@ export default function Custom404() {
           >
             חזרה לדף הבית
           </Link>
-          <Link 
-            href="/gallery"
+          {/* <Link 
+            href="#gallery"
             className="block w-full py-3 border border-primary text-primary rounded-lg hover:bg-primary-light transition duration-300"
           >
             צפייה בגלריית התמונות
           </Link>
           <Link
-            href="/contact"
+            href="#booking"
             className="block w-full py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition duration-300"
           >
             צור קשר
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>

@@ -16,19 +16,22 @@ export default function NotFound() {
         </p>
         <div className="space-y-4">
           <Link 
-            href="/"
+            href="#hero"
+            target="_blank"
             className="block w-full py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition duration-300"
           >
             חזרה לדף הבית
           </Link>
           <Link 
-            href="/gallery"
+            href="#gallery"
+            target="_blank"
             className="block w-full py-3 border border-primary text-primary rounded-lg hover:bg-primary-light transition duration-300"
-          >
+            >
             צפייה בגלריית התמונות
           </Link>
           <Link
-            href="/contact"
+            href="#booking"
+            target="_blank"
             className="block w-full py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition duration-300"
           >
             צור קשר

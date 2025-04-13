@@ -74,7 +74,6 @@ const Gallery = () => {
                   src={image.url}
                   alt={image.alt}
                   fill
-                  priority={index === currentIndex}
                   sizes="(max-width: 768px) 100vw, 90vw"
                   quality={75}
                   className="object-cover"
