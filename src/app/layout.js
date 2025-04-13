@@ -52,6 +52,8 @@ export default function RootLayout({ children }) {
         <meta name="twitter:title" content="וילה אורית בגלבוע | נופש יוקרתי עם בריכה פרטית" />
         <meta name="twitter:description" content="וילה אורית בגלבוע מציעה אירוח יוקרתי עם 2 יחידות פרטיות, בריכות, נוף פנורמי והמון פרטיות." />
         <meta name="twitter:image" content="https://villaorit.co.il/images/villa-orit-gilboa-panoramic-view.jpg" />
+        <meta name="twitter:site" content="@villaorit" />
+        <meta name="twitter:creator" content="@villaorit" />
         
         {/* Favicon */}
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
