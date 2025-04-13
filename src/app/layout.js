@@ -4,6 +4,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 import NagishLi from '@/components/ui/NagishLi';
+import Script from 'next/script';
 
 // הגדרת הפונט רוביק לעברית
 const rubik = Rubik({
@@ -13,8 +14,9 @@ const rubik = Rubik({
 });
 
 export const metadata = {
-  title: 'וילה אורית בגלבוע | אירוח יוקרתי עם נוף עוצר נשימה',
-  description: 'אירוח יוקרתי בוילה אורית בגלבוע עם נוף הרים מרהיב, בריכה פרטית, ושתי יחידות אירוח מפוארות.',
+  title: 'וילה אורית בגלבוע | נופש יוקרתי עם בריכה פרטית ונוף מרהיב',
+  description: 'וילה אורית בגלבוע מציעה אירוח יוקרתי עם 2 יחידות פרטיות, בריכות, נוף פנורמי והמון פרטיות. הזמינו עכשיו חופשה מושלמת בצפון בסביבה טבעית קסומה!',
+  keywords: 'וילה אורית בגלבוע, וילה פרטית בצפון, נופש עם בריכה פרטית, וילה עם בריכה על הגג, חופשה משפחתית בגלבוע, צימר יוקרתי בגלבוע, נופש בטבע, וילה עם נוף, אירוח בוטיק בצפון, וילה לאירוח קבוצות',
 };
 
 export default function RootLayout({ children }) {
@@ -29,6 +31,36 @@ export default function RootLayout({ children }) {
           var nl_compact = '0';
           var nl_contact = '0543199489';
         `}} />
+        
+        {/* מטא תגיות נוספות */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+        <meta name="theme-color" content="#4A7C59" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="robots" content="index, follow, max-image-preview:large" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="וילה אורית בגלבוע | נופש יוקרתי עם בריכה פרטית ונוף מרהיב" />
+        <meta property="og:description" content="וילה אורית בגלבוע מציעה אירוח יוקרתי עם 2 יחידות פרטיות, בריכות, נוף פנורמי והמון פרטיות. הזמינו עכשיו חופשה מושלמת בצפון!" />
+        <meta property="og:image" content="https://villaorit.co.il/images/villa-orit-gilboa-panoramic-view.jpg" />
+        <meta property="og:url" content="https://villaorit.co.il" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="he_IL" />
+        <meta property="og:site_name" content="וילה אורית בגלבוע" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="וילה אורית בגלבוע | נופש יוקרתי עם בריכה פרטית" />
+        <meta name="twitter:description" content="וילה אורית בגלבוע מציעה אירוח יוקרתי עם 2 יחידות פרטיות, בריכות, נוף פנורמי והמון פרטיות." />
+        <meta name="twitter:image" content="https://villaorit.co.il/images/villa-orit-gilboa-panoramic-view.jpg" />
+        
+        {/* Favicon */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4a7c59" />
+        <meta name="msapplication-TileColor" content="#4a7c59" />
+        <meta name="theme-color" content="#4a7c59" />
       </head>
       <body className={`${rubik.variable} font-rubik bg-white text-slate-800`}>
         <Navbar />
@@ -36,6 +68,98 @@ export default function RootLayout({ children }) {
         <ScrollToTop />
         <NagishLi />
         <Footer />
+        
+        {/* Schema.org data */}
+        <Script
+          id="schema-lodging"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LodgingBusiness",
+              "name": "וילה אורית בגלבוע",
+              "image": "https://villaorit.co.il/images/villa-orit-gilboa-panoramic-view.jpg",
+              "description": "וילה אורית בגלבוע מציעה אירוח יוקרתי עם 2 יחידות פרטיות, בריכות, נוף פנורמי והמון פרטיות.",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "הגלבוע",
+                "addressRegion": "צפון",
+                "addressCountry": "IL"
+              },
+              "telephone": "+972543199489",
+              "priceRange": "₪₪₪",
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "87"
+              },
+              "amenityFeature": [
+                {
+                  "@type": "LocationFeatureSpecification",
+                  "name": "בריכה פרטית על הגג",
+                  "value": true
+                },
+                {
+                  "@type": "LocationFeatureSpecification",
+                  "name": "בריכה חיצונית",
+                  "value": true
+                },
+                {
+                  "@type": "LocationFeatureSpecification",
+                  "name": "נוף פנורמי",
+                  "value": true
+                },
+                {
+                  "@type": "LocationFeatureSpecification",
+                  "name": "מטבח מאובזר",
+                  "value": true
+                },
+                {
+                  "@type": "LocationFeatureSpecification",
+                  "name": "חדרי שינה מרווחים",
+                  "value": true
+                }
+              ]
+            })
+          }}
+        />
+        
+        <Script
+          id="schema-faq"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "כמה אנשים יכולים להתארח בוילה אורית בגלבוע?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "הוילה כוללת שתי יחידות אירוח, כל אחת מתאימה לעד 6 אנשים, כך שבסך הכל ניתן לארח עד 12 אנשים."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "האם ניתן להביא חיות מחמד לוילה?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "לצערנו לא ניתן להביא חיות מחמד לוילה אורית בגלבוע."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "האם יש מזגן בכל החדרים?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "כן, כל החדרים בוילה ממוזגים ונעימים בכל עונות השנה."
+                  }
+                }
+              ]
+            })
+          }}
+        />
       </body>
     </html>
   );

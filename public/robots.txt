@@ -1,0 +1,14 @@
+# robots.txt מוכן לפרסום
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /terms/cookies
+Disallow: /booking/temporary-sessions/
+
+# אפשר לגוגל לעבור על התמונות
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /gallery/
+
+Sitemap: https://villaorit.co.il/sitemap.xml 

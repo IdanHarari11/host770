@@ -1,0 +1,24 @@
+{
+  "name": "וילה אורית בגלבוע | אירוח יוקרתי בצפון",
+  "short_name": "וילה אורית",
+  "description": "אירוח יוקרתי בוילה אורית בגלבוע עם נוף הרים, בריכות פרטיות ושתי יחידות אירוח מפוארות",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4a7c59",
+  "orientation": "portrait",
+  "dir": "rtl",
+  "lang": "he-IL",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+} 
