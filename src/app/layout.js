@@ -11,6 +11,8 @@ const rubik = Rubik({
   subsets: ['hebrew', 'latin'],
   weight: ['300', '400', '500', '700'],
   variable: '--font-rubik',
+  display: 'swap',
+  preload: true,
 });
 
 export const metadata = {
@@ -23,6 +25,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="he" dir="rtl">
       <head>
+        {/* preconnect לשיפור ביצועים */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
         {/* הגדרות בסיסיות עבור נגיש לי */}
         <script dangerouslySetInnerHTML={{ __html: `
           var nl_lang = 'he';
@@ -75,6 +81,7 @@ export default function RootLayout({ children }) {
         <Script
           id="schema-lodging"
           type="application/ld+json"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
@@ -129,6 +136,7 @@ export default function RootLayout({ children }) {
         <Script
           id="schema-faq"
           type="application/ld+json"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",

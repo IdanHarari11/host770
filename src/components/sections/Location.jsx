@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { FaMapMarkerAlt, FaDirections, FaMountain, FaWater, FaTree, FaStore } from 'react-icons/fa';
 import Section from '../ui/Section';
 import Button from '../ui/Button';
+import Image from 'next/image';
 
 const attractions = [
   { 
@@ -127,11 +128,17 @@ const Location = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <img 
-                src="/image/WhatsApp Image 2025-04-09 at 09.27.33.jpeg" 
-                alt="נוף מאזור הגלבוע" 
-                className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-              />
+              <div className="relative w-full h-full">
+                <Image 
+                  src="/image/WhatsApp Image 2025-04-09 at 09.26.54.jpeg" 
+                  alt="כניסה לוילה אורית בגלבוע" 
+                  fill
+                  loading="lazy"
+                  sizes="(max-width: 640px) 50vw, 33vw"
+                  quality={70}
+                  className="object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
             </motion.div>
             <motion.div
               className="rounded-xl overflow-hidden aspect-[4/3]"
@@ -140,11 +147,17 @@ const Location = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <img 
-                src="/image/WhatsApp Image 2025-04-09 at 09.27.34.jpeg" 
-                alt="טבע באזור וילה אורית" 
-                className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-              />
+              <div className="relative w-full h-full">
+                <Image 
+                  src="/image/WhatsApp Image 2025-04-09 at 09.27.27.jpeg" 
+                  alt="נראות הוילה אורית בגלבוע" 
+                  fill
+                  loading="lazy"
+                  sizes="(max-width: 640px) 50vw, 33vw"
+                  quality={70}
+                  className="object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
             </motion.div>
           </div>
         </div>

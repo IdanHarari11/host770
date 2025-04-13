@@ -41,10 +41,16 @@ const Hero = () => {
             zIndex: index === currentImageIndex ? 1 : 0,
           }}
         >
-          <img
+          <Image
             src={image}
             alt={`וילה אורית תמונה ${index + 1}`}
-            className="absolute inset-0 w-full h-full object-cover"
+            fill
+            priority={index === 0}
+            sizes="100vw"
+            quality={80}
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJ5MUZMpgAAAABJRU5ErkJggg=="
+            className="object-cover"
           />
         </div>
       ))}

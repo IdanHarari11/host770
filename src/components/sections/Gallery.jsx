@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { FaArrowRight, FaArrowLeft, FaExpand } from 'react-icons/fa';
 import Section from '../ui/Section';
+import Image from 'next/image';
 
 const images = [
   { url: '/image/WhatsApp Image 2025-04-09 at 09.27.32.jpeg', alt: 'וילה אורית - חזית הבית' },
@@ -68,11 +69,17 @@ const Gallery = () => {
               }}
               transition={{ duration: 0.7 }}
             >
-              <img
-                src={image.url}
-                alt={image.alt}
-                className="w-full h-full object-cover"
-              />
+              <div className="relative w-full h-full">
+                <Image
+                  src={image.url}
+                  alt={image.alt}
+                  fill
+                  priority={index === currentIndex}
+                  sizes="(max-width: 768px) 100vw, 90vw"
+                  quality={75}
+                  className="object-cover"
+                />
+              </div>
               <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black to-transparent p-4 text-white">
                 <p className="text-lg md:text-xl">{image.alt}</p>
               </div>
@@ -140,11 +147,17 @@ const Gallery = () => {
                   : 0);
               }}
             >
-              <img
-                src={img}
-                alt={`תמונה נוספת של וילה אורית ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
+              <div className="relative w-full h-full">
+                <Image
+                  src={img}
+                  alt={`תמונה נוספת של וילה אורית ${index + 1}`}
+                  fill
+                  loading="lazy"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  quality={65}
+                  className="object-cover"
+                />
+              </div>
             </motion.div>
           ))}
         </div>
