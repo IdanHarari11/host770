@@ -3,7 +3,7 @@ import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ScrollToTop from '@/components/ui/ScrollToTop';
-import Accessibility from '@/components/ui/Accessibility';
+import NagishLi from '@/components/ui/NagishLi';
 
 // הגדרת הפונט רוביק לעברית
 const rubik = Rubik({
@@ -20,11 +20,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="he" dir="rtl">
+      <head>
+        {/* הגדרות בסיסיות עבור נגיש לי */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          var nl_lang = 'he';
+          var nl_pos = 'br';
+          var nl_color = 'green';
+          var nl_compact = '0';
+          var nl_contact = '0543199489';
+        `}} />
+      </head>
       <body className={`${rubik.variable} font-rubik bg-white text-slate-800`}>
         <Navbar />
         {children}
         <ScrollToTop />
-        <Accessibility />
+        <NagishLi />
         <Footer />
       </body>
     </html>
