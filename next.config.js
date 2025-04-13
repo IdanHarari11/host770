@@ -8,9 +8,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  experimental: {
-    appDir: true,
-  },
   output: 'standalone',
   env: {
     PUBLIC_FOLDER: './public',

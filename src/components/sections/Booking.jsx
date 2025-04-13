@@ -19,21 +19,52 @@ const Booking = () => {
   
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionError, setSubmissionError] = useState(null);
   
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmissionError(null);
     
-    // Simulate API call
-    setTimeout(() => {
-      setFormSubmitted(true);
+    try {
+      const response = await fetch('/api/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          type: 'booking',
+          ...formData
+        }),
+      });
+      
+      const result = await response.json();
+      
+      if (result.success) {
+        setFormSubmitted(true);
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          guests: '2',
+          checkIn: '',
+          checkOut: '',
+          message: '',
+        });
+      } else {
+        setSubmissionError(result.error || 'אירעה שגיאה בשליחת ההודעה');
+      }
+    } catch (error) {
+      console.error('שגיאה בשליחת הטופס:', error);
+      setSubmissionError('אירעה שגיאה בשליחת ההודעה, אנא נסו שוב מאוחר יותר');
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
   
   return (
@@ -69,6 +100,12 @@ const Booking = () => {
           ) : (
             <>
               <h3 className="text-xl font-bold mb-6">מלאו את הפרטים ונחזור אליכם בהקדם</h3>
+              
+              {submissionError && (
+                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4 text-right">
+                  {submissionError}
+                </div>
+              )}
               
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>

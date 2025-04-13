@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaUniversalAccess, FaTextHeight, FaFont, FaContrast } from 'react-icons/fa';
+import { FaUniversalAccess, FaTextHeight, FaFont, FaAdjust } from 'react-icons/fa';
 
 const Accessibility = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -89,7 +89,7 @@ const Accessibility = () => {
                   }`}
                   onClick={toggleHighContrast}
                 >
-                  <FaContrast /> ניגודיות גבוהה
+                  <FaAdjust /> ניגודיות גבוהה
                 </button>
               </div>
             </div>
