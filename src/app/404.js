@@ -19,18 +19,21 @@ export default function Custom404() {
           <Link 
             href="/"
             className="block w-full py-3 bg-[#b19470] text-white rounded-lg hover:bg-[#9a8060] transition duration-300"
+            target="_blank"
           >
             Return to Home Page
           </Link>
           <Link 
             href="/#gallery"
             className="block w-full py-3 border border-[#b19470] text-[#b19470] rounded-lg hover:bg-[#f8f5e6] transition duration-300"
+            target="_blank"
           >
             View Our Gallery
           </Link>
           <Link
             href="/#booking"
             className="block w-full py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition duration-300"
+            target="_blank"
           >
             Contact Us
           </Link>

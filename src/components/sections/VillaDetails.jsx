@@ -9,7 +9,7 @@ const VillaDetails = () => {
   const units = [
     {
       name: 'Fully Furnished & Designed Apartment',
-      image: '/images/1ad3f726-3128-436a-aec5-5cec7e41582e.jpeg',
+      image: '/images/766b1b15-a11f-4be8-8f97-18b5303175ed.avif',
       desc: 'Modern, White + Cream Aesthetic design, perfect for families & hi-tech professionals.',
       capacity: 4,
       bedrooms: 2,
