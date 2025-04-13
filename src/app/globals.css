@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --primary-color: #4caf50;
-  --secondary-color: #87ceeb;
-  --accent-color: #f5f5dc;
+  --primary-color: #b19470; /* Light brown/beige that complements cream */
+  --secondary-color: #f5f5f5; /* Light gray */
+  --accent-color: #f8f5e6; /* Cream color */
   --text-color: #333333;
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 248, 245, 230;
   --accessibility-font-size: 0px;
   --glass-bg: rgba(255, 255, 255, 0.25);
   --glass-border: rgba(255, 255, 255, 0.3);
@@ -18,21 +18,21 @@
 
 html,
 body {
-  direction: rtl;
-  text-align: right;
+  direction: ltr;
+  text-align: left;
   scroll-behavior: smooth;
 }
 
-/* קוד תמיכה בנגישות */
+/* Accessibility support code */
 p, h1, h2, h3, h4, h5, h6, a, button, li, span, label, input, textarea, select {
   font-size: calc(1em + var(--accessibility-font-size));
 }
 
-.rtl {
-  direction: rtl;
+.ltr {
+  direction: ltr;
 }
 
-/* תמיכה בעיצוב glassmorphism */
+/* Glassmorphism design support */
 .glass {
   background: var(--glass-bg);
   backdrop-filter: blur(10px);
@@ -68,11 +68,11 @@ p, h1, h2, h3, h4, h5, h6, a, button, li, span, label, input, textarea, select {
   }
   
   .button-primary {
-    @apply bg-[#4caf50] hover:bg-[#43a047] text-white font-bold py-3 px-6 rounded-2xl shadow-md transition-all duration-300 text-lg;
+    @apply bg-[#b19470] hover:bg-[#9a8060] text-white font-bold py-3 px-6 rounded-2xl shadow-md transition-all duration-300 text-lg;
   }
   
   .button-secondary {
-    @apply bg-white hover:bg-gray-100 text-[#4caf50] border border-[#4caf50] font-bold py-3 px-6 rounded-2xl shadow-md transition-all duration-300 text-lg;
+    @apply bg-white hover:bg-[#f8f5e6] text-[#b19470] border border-[#b19470] font-bold py-3 px-6 rounded-2xl shadow-md transition-all duration-300 text-lg;
   }
 
   .card {

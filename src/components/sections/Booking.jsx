@@ -71,8 +71,8 @@ const Booking = () => {
   return (
     <Section 
       id="booking" 
-      title="הזמינו עכשיו"
-      subtitle="בדקו זמינות ושריינו את התאריכים שלכם"
+      title="Book Now"
+      subtitle="Check Availability and Reserve Your Dates"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* Contact Form */}
@@ -84,23 +84,23 @@ const Booking = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="text-6xl text-[#4caf50] mb-6">
+              <div className="text-6xl text-[#b19470] mb-6">
                 <FaCheck />
               </div>
-              <h3 className="text-2xl font-bold mb-2">תודה על פנייתך!</h3>
+              <h3 className="text-2xl font-bold mb-2">Thank you for your inquiry!</h3>
               <p className="text-gray-600 text-center mb-6">
-                קיבלנו את הפרטים שלך ונחזור אליך בהקדם האפשרי.
+                We have received your details and will get back to you as soon as possible.
               </p>
               <Button 
                 onClick={() => setFormSubmitted(false)}
                 variant="secondary"
               >
-                חזרה לטופס
+                Back to Form
               </Button>
             </motion.div>
           ) : (
             <>
-              <h3 className="text-xl font-bold mb-6">מלאו את הפרטים ונחזור אליכם בהקדם</h3>
+              <h3 className="text-xl font-bold mb-6">Fill in the details and we'll get back to you soon</h3>
               
               {submissionError && (
                 <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4 text-right">
@@ -110,7 +110,7 @@ const Booking = () => {
               
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
-                  <label htmlFor="name" className="block text-gray-700 mb-1">שם מלא</label>
+                  <label htmlFor="name" className="block text-gray-700 mb-1">Full Name</label>
                   <input
                     type="text"
                     id="name"
@@ -118,13 +118,13 @@ const Booking = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4caf50] focus:border-transparent"
-                    placeholder="הכנס את שמך המלא"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#b19470] focus:border-transparent"
+                    placeholder="Enter your full name"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="phone" className="block text-gray-700 mb-1">טלפון</label>
+                  <label htmlFor="phone" className="block text-gray-700 mb-1">Phone</label>
                   <input
                     type="tel"
                     id="phone"
@@ -132,13 +132,13 @@ const Booking = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4caf50] focus:border-transparent"
-                    placeholder="הכנס את מספר הטלפון שלך"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#b19470] focus:border-transparent"
+                    placeholder="Enter your phone number"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-gray-700 mb-1">אימייל</label>
+                  <label htmlFor="email" className="block text-gray-700 mb-1">Email</label>
                   <input
                     type="email"
                     id="email"
@@ -146,14 +146,14 @@ const Booking = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4caf50] focus:border-transparent"
-                    placeholder="הכנס את כתובת האימייל שלך"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#b19470] focus:border-transparent"
+                    placeholder="Enter your email address"
                   />
                 </div>
                 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="guests" className="block text-gray-700 mb-1">מספר אורחים</label>
+                    <label htmlFor="guests" className="block text-gray-700 mb-1">Number of Guests</label>
                     <div className="relative">
                       <select
                         id="guests"
@@ -161,7 +161,7 @@ const Booking = () => {
                         value={formData.guests}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-[#4caf50] focus:border-transparent"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-[#b19470] focus:border-transparent"
                       >
                         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(num => (
                           <option key={num} value={num}>{num}</option>
@@ -174,7 +174,7 @@ const Booking = () => {
                   </div>
                   
                   <div>
-                    <label htmlFor="checkIn" className="block text-gray-700 mb-1">תאריך הגעה</label>
+                    <label htmlFor="checkIn" className="block text-gray-700 mb-1">Arrival Date</label>
                     <div className="relative">
                       <input
                         type="date"
@@ -184,7 +184,7 @@ const Booking = () => {
                         onChange={handleChange}
                         required
                         min={new Date().toISOString().split('T')[0]}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4caf50] focus:border-transparent"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#b19470] focus:border-transparent"
                       />
                       <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                         <FaCalendarAlt className="text-gray-500" />
@@ -193,7 +193,7 @@ const Booking = () => {
                   </div>
                   
                   <div>
-                    <label htmlFor="checkOut" className="block text-gray-700 mb-1">תאריך עזיבה</label>
+                    <label htmlFor="checkOut" className="block text-gray-700 mb-1">Departure Date</label>
                     <div className="relative">
                       <input
                         type="date"
@@ -203,7 +203,7 @@ const Booking = () => {
                         onChange={handleChange}
                         required
                         min={formData.checkIn || new Date().toISOString().split('T')[0]}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4caf50] focus:border-transparent"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#b19470] focus:border-transparent"
                       />
                       <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                         <FaCalendarAlt className="text-gray-500" />
@@ -213,15 +213,15 @@ const Booking = () => {
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-gray-700 mb-1">הודעה (אופציונלי)</label>
+                  <label htmlFor="message" className="block text-gray-700 mb-1">Message (Optional)</label>
                   <textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     rows="3"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4caf50] focus:border-transparent"
-                    placeholder="הוסף הודעה או שאלה..."
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#b19470] focus:border-transparent"
+                    placeholder="Add a message or question..."
                   ></textarea>
                 </div>
                 
@@ -233,10 +233,10 @@ const Booking = () => {
                   {isSubmitting ? (
                     <div className="flex items-center justify-center">
                       <div className="animate-spin h-5 w-5 border-2 border-white rounded-full border-t-transparent"></div>
-                      <span className="mr-2">שולח...</span>
+                      <span className="mr-2">Sending...</span>
                     </div>
                   ) : (
-                    'שלח בקשה'
+                    'Send Request'
                   )}
                 </Button>
               </form>
@@ -244,48 +244,48 @@ const Booking = () => {
           )}
         </div>
         
-        {/* Countdown & Contact Info - החלפנו את החלק של זמינות וסטטוס הזמנות */}
+        {/* Countdown & Contact Info */}
         <div className="flex flex-col gap-6">
           {/* Booking Countdown */}
           <BookingCountdown />
           
           <div className="bg-white p-6 rounded-2xl shadow-lg">
-            <h3 className="text-xl font-bold mb-4">צרו קשר ישירות</h3>
+            <h3 className="text-xl font-bold mb-4">Contact Us Directly</h3>
             <p className="text-gray-600 mb-6">
-              אם אתם מעדיפים ליצור קשר ישירות, אתם מוזמנים להשתמש באחת מהאפשרויות הבאות:
+              If you prefer to contact us directly, you can use any of the following options:
             </p>
             
             <div className="space-y-3">
               <a 
-                href="tel:+972543199489" 
+                href="tel:+19543197577" 
                 className="flex items-center gap-3 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
               >
-                <div className="bg-[#4caf50] text-white p-2 rounded-full">
+                <div className="bg-[#b19470] text-white p-2 rounded-full">
                   <FaPhone />
                 </div>
-                <span>התקשרו אלינו: 054-3199489</span>
+                <span>Call us: 954-319-7577</span>
               </a>
               
               <a 
-                href="https://wa.me/972543199489" 
+                href="https://wa.me/19543197577" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
               >
-                <div className="bg-[#25D366] text-white p-2 rounded-full">
+                <div className="bg-[#b19470] text-white p-2 rounded-full">
                   <FaWhatsapp />
                 </div>
-                <span>שלחו הודעה בוואטסאפ</span>
+                <span>Send WhatsApp message</span>
               </a>
               
               <a 
-                href="mailto:tsvika11@gmail.com" 
+                href="mailto:Kooshmanagement@gmail.com" 
                 className="flex items-center gap-3 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
               >
-                <div className="bg-[#4285F4] text-white p-2 rounded-full">
+                <div className="bg-[#b19470] text-white p-2 rounded-full">
                   <FaEnvelope />
                 </div>
-                <span>שלחו לנו אימייל</span>
+                <span>Send us an email</span>
               </a>
             </div>
           </div>

@@ -6,11 +6,10 @@ import { motion } from 'framer-motion';
 import Button from '../ui/Button';
 
 const backgroundImages = [
-  '/image/WhatsApp Image 2025-04-09 at 09.25.29.jpeg',
-  '/image/WhatsApp Image 2025-04-09 at 09.27.31.jpeg',
-  '/image/WhatsApp Image 2025-04-09 at 09.27.27.jpeg',
-  '/image/WhatsApp Image 2025-04-09 at 09.27.13.jpeg',
-  '/image/WhatsApp Image 2025-04-09 at 09.25.29.jpeg',
+  '/images/7f6dc8f1-3fd1-4a33-a24c-9f349be21a8c.avif',
+  '/images/bf05672d-8bf4-4e89-8842-7a370be30d7a.avif',
+  '/images/dbaac64d-e306-4e05-b51a-111e01ebeda6.avif',
+  '/images/d6f455d7-7608-463a-badd-c7222f20581d.webp',
 ];
 
 const Hero = () => {
@@ -43,7 +42,7 @@ const Hero = () => {
         >
           <Image
             src={image}
-            alt={`וילה אורית תמונה ${index + 1}`}
+            alt={`Koosh Management Rental Apartment ${index + 1}`}
             fill
             priority={index === 0}
             sizes="100vw"
@@ -66,7 +65,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          וילה אורית בגלבוע
+          Fully Furnished & Designed Apartments
         </motion.h1>
         
         <motion.p 
@@ -75,7 +74,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          אירוח יוקרתי עם נוף עוצר נשימה, בריכה פרטית ושקט מושלם
+          for Rent at Koosh Management, Griffin Project
         </motion.p>
         
         <motion.div 
@@ -85,14 +84,14 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <Button onClick={() => window.location.href = '#booking'}>
-            בדוק זמינות
+            Check Availability
           </Button>
           
           <Button 
             variant="secondary"
-            onClick={() => window.location.href = 'tel:+972543199589'}
+            onClick={() => window.location.href = 'tel:+19543197577'}
           >
-            צור קשר עכשיו
+            Call Now
           </Button>
         </motion.div>
       </div>

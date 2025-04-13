@@ -1,42 +1,28 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaBed, FaBath, FaUsers, FaSwimmingPool, FaUtensils, FaWifi, FaTemperatureHigh } from 'react-icons/fa';
+import { FaBed, FaBath, FaUsers, FaSwimmingPool, FaUtensils, FaWifi, FaTemperatureHigh, FaDollarSign } from 'react-icons/fa';
 import Section from '../ui/Section';
 import Card from '../ui/Card';
 
 const VillaDetails = () => {
   const units = [
     {
-      name: 'יחידה 1 - הסוויטה המפוארת',
-      image: '/image/WhatsApp Image 2025-04-09 at 09.25.33 (1).jpeg',
-      desc: 'יחידה מרווחת המתאימה למשפחות עם נוף מדהים לגלבוע, בריכה פרטית וחצר מפנקת.',
-      capacity: 12,
-      bedrooms: 3,
-      bathrooms: 2,
+      name: 'Fully Furnished & Designed Apartment',
+      image: '/images/1ad3f726-3128-436a-aec5-5cec7e41582e.jpeg',
+      desc: 'Modern, White + Cream Aesthetic design, perfect for families & hi-tech professionals.',
+      capacity: 4,
+      bedrooms: 2,
+      bathrooms: 1,
+      dailyPrice: 120,
+      monthlyPrice: 3000,
       features: [
-        { icon: <FaBed />, text: '3 חדרי שינה מפוארים' },
-        { icon: <FaBath />, text: '2 חדרי רחצה מאובזרים' },
-        { icon: <FaSwimmingPool />, text: 'בריכה עם נוף' },
-        { icon: <FaUtensils />, text: 'מטבח מאובזר במלואו' },
-        { icon: <FaTemperatureHigh />, text: 'מזגן בכל חדר' },
-        { icon: <FaWifi />, text: 'WiFi חופשי' },
-      ]
-    },
-    {
-      name: 'יחידה 2 - הסוויטה המשפחתית',
-      image: '/image/WhatsApp Image 2025-04-09 at 09.25.30 (2).jpeg',
-      desc: 'יחידה אינטימית וייחודית, מושלמת לזוגות, עם מרפסת פרטית ונוף פתוח לטבע.',
-      capacity: 12,
-      bedrooms: 3,
-      bathrooms: 2,
-      features: [
-        { icon: <FaBed />, text: '3 חדרי שינה נעימים' },
-        { icon: <FaBath />, text: '2 חדרי רחצה מאובזרים' },
-        { icon: <FaSwimmingPool />, text: 'גישה לבריכה משותפת' },
-        { icon: <FaUtensils />, text: 'מטבחון מאובזר' },
-        { icon: <FaTemperatureHigh />, text: 'מזגן בכל חדר' },
-        { icon: <FaWifi />, text: 'WiFi חופשי' },
+        { icon: <FaBed />, text: '2 Bedrooms' },
+        { icon: <FaBath />, text: 'Large Central Bathroom' },
+        { icon: <FaUtensils />, text: 'Fully Equipped Kitchen' },
+        { icon: <FaTemperatureHigh />, text: 'Climate Control' },
+        { icon: <FaWifi />, text: 'Free WiFi' },
+        { icon: <FaDollarSign />, text: 'Daily: $120 / Monthly: $3,000' },
       ]
     },
   ];
@@ -44,10 +30,11 @@ const VillaDetails = () => {
   return (
     <Section 
       id="villa-details" 
-      title="היחידות שלנו"
-      subtitle="בחרו את היחידה המתאימה לצרכים שלכם"
+      title="Our Apartments"
+      subtitle="Fully Furnished, Fully Equipped, Modern Design"
+      bgColor="bg-white"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-1 gap-8 max-w-3xl mx-auto">
         {units.map((unit, index) => (
           <motion.div
             key={unit.name}
@@ -63,34 +50,34 @@ const VillaDetails = () => {
                   alt={unit.name} 
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
                 />
-                <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-bold text-[#4caf50] shadow-md">
+                <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-bold text-[#b19470] shadow-md">
                   <div className="flex items-center gap-2">
                     <FaUsers />
-                    <span>עד {unit.capacity} אנשים</span>
+                    <span>Up to {unit.capacity} people</span>
                   </div>
                 </div>
               </div>
               
-              <h3 className="text-2xl font-bold mb-2 text-[#4caf50]">{unit.name}</h3>
+              <h3 className="text-2xl font-bold mb-2 text-[#b19470]">{unit.name}</h3>
               <p className="text-gray-600 mb-4">{unit.desc}</p>
               
               <div className="flex items-center gap-4 mb-4">
                 <div className="flex items-center gap-1">
-                  <FaBed className="text-[#4caf50]" />
+                  <FaBed className="text-[#b19470]" />
                   <span>{unit.bedrooms}</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <FaBath className="text-[#4caf50]" />
+                  <FaBath className="text-[#b19470]" />
                   <span>{unit.bathrooms}</span>
                 </div>
               </div>
               
               <div className="mt-auto">
-                <h4 className="font-bold text-lg mb-2">מה מקבלים?</h4>
+                <h4 className="font-bold text-lg mb-2">Features Include:</h4>
                 <ul className="space-y-2">
                   {unit.features.map((feature, i) => (
                     <li key={i} className="flex items-center gap-2">
-                      <span className="text-[#4caf50]">{feature.icon}</span>
+                      <span className="text-[#b19470]">{feature.icon}</span>
                       <span>{feature.text}</span>
                     </li>
                   ))}

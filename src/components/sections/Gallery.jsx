@@ -7,12 +7,12 @@ import Section from '../ui/Section';
 import Image from 'next/image';
 
 const images = [
-  { url: '/image/WhatsApp Image 2025-04-09 at 09.27.31.jpeg', alt: 'וילה אורית - חזית הבית' },
-  { url: '/image/WhatsApp Image 2025-04-09 at 09.27.13.jpeg', alt: 'מטבח מאובזר' },
-  { url: '/image/WhatsApp Image 2025-04-09 at 09.25.29.jpeg', alt: 'בריכת שחייה פרטית' },
-  { url: '/image/WhatsApp Image 2025-04-09 at 09.25.30 (1).jpeg', alt: 'חדרים מפוארים' },
-  { url: '/image/WhatsApp Image 2025-04-13 at 06.43.28.jpeg', alt: 'פינת אוכל' },
-  { url: '/image/WhatsApp Image 2025-04-09 at 09.27.21.jpeg', alt: 'חלל מרווח' },
+  { url: '/images/7a278e47-9e3c-46dd-adda-d54125c62ccb.jpeg', alt: 'Toilet' },
+  { url: '/images/b1e850ee-bed8-469f-abef-2cea45598032.jpeg', alt: 'Porch' },
+  { url: '/images/ad74bedd-96e2-4791-bdba-f7e9fa4549dc.jpeg', alt: 'Pool' },
+  { url: '/images/38acfcb3-bfa9-41e4-bc69-3ab0b6db18c4.avif', alt: 'Sitting Area' },
+  { url: '/images/90cfc175-8fe1-4b62-85c9-472044e04a11.jpeg', alt: 'Kitchen' },
+  { url: '/images/92bd4d1e-ea2d-4fdb-b2ca-bcfd32be57d1.jpeg', alt: 'Gym' },
 ];
 
 const Gallery = () => {
@@ -44,9 +44,9 @@ const Gallery = () => {
   return (
     <Section 
       id="gallery" 
-      title="גלריה"
-      subtitle="התרשמו מהנוף, החדרים והאירוח היוקרתי בוילה אורית"
-      bgColor="bg-[#f5f5dc]"
+      title="Gallery"
+      subtitle="View our beautifully designed apartments at Griffin Project"
+      bgColor="bg-[#f8f5e6]"
     >
       <div className={`
         relative overflow-hidden rounded-2xl shadow-xl
@@ -86,18 +86,18 @@ const Gallery = () => {
         {/* Navigation Arrows */}
         <button
           onClick={goToPrevious}
-          className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20 bg-white bg-opacity-50 p-3 rounded-full text-gray-800 hover:bg-opacity-70 transition-all"
-          aria-label="תמונה קודמת"
+          className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20 bg-white bg-opacity-50 p-3 rounded-full text-gray-800 hover:bg-opacity-70 transition-all"
+          aria-label="Previous image"
         >
-          <FaArrowRight />
+          <FaArrowLeft />
         </button>
         
         <button
           onClick={goToNext}
-          className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20 bg-white bg-opacity-50 p-3 rounded-full text-gray-800 hover:bg-opacity-70 transition-all"
-          aria-label="תמונה הבאה"
+          className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20 bg-white bg-opacity-50 p-3 rounded-full text-gray-800 hover:bg-opacity-70 transition-all"
+          aria-label="Next image"
         >
-          <FaArrowLeft />
+          <FaArrowRight />
         </button>
         
         {/* Thumbnails */}
@@ -107,9 +107,9 @@ const Gallery = () => {
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`w-3 h-3 rounded-full transition-all ${
-                index === currentIndex ? 'bg-white scale-125' : 'bg-white bg-opacity-50'
+                index === currentIndex ? 'bg-[#b19470] scale-125' : 'bg-white bg-opacity-50'
               }`}
-              aria-label={`עבור לתמונה ${index + 1}`}
+              aria-label={`Go to image ${index + 1}`}
             />
           ))}
         </div>
@@ -117,17 +117,17 @@ const Gallery = () => {
       
       {/* Grid Gallery */}
       <div className="mt-16">
-        <h3 className="text-2xl font-bold mb-8 text-center">תמונות נוספות</h3>
+        <h3 className="text-2xl font-bold mb-8 text-center text-[#b19470]">More Images</h3>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {[
-            '/image/WhatsApp Image 2025-04-09 at 09.25.30 (2).jpeg',
-            '/image/WhatsApp Image 2025-04-09 at 09.25.31 (2).jpeg',
-            '/image/WhatsApp Image 2025-04-09 at 09.25.32 (1).jpeg',
-            '/image/WhatsApp Image 2025-04-09 at 09.25.33 (1).jpeg',
-            '/image/WhatsApp Image 2025-04-09 at 09.26.57 (1).jpeg',
-            '/image/WhatsApp Image 2025-04-09 at 09.26.58.jpeg',
-            '/image/WhatsApp Image 2025-04-09 at 09.27.01.jpeg',
-            '/image/WhatsApp Image 2025-04-09 at 09.27.19 (1).jpeg',
+            '/images/04774bb9-27fe-44b1-9cd0-2e35428a142b.jpeg',
+            '/images/7cb7c46e-0f53-4fc1-9e17-2bb7e9cff0c6.jpeg',
+            '/images/92bd4d1e-ea2d-4fdb-b2ca-bcfd32be57d1.jpeg',
+            '/images/eb97bd0e-05c0-4bd5-8cf3-e3d719259f02.jpeg',
+            '/images/ebea32fc-21e2-46c0-a770-553accef4680.jpeg',
+            '/images/0b993463-8415-46ba-9004-57257ecebf5d.jpeg',
+            '/images/7a278e47-9e3c-46dd-adda-d54125c62ccb.jpeg',
+            '/images/0111e94d-85cc-4af8-b978-3a7065cedaa5.jpeg',
           ].map((img, index) => (
             <motion.div
               key={index}
@@ -146,7 +146,7 @@ const Gallery = () => {
               <div className="relative w-full h-full">
                 <Image
                   src={img}
-                  alt={`תמונה נוספת של וילה אורית ${index + 1}`}
+                  alt={`Additional apartment image ${index + 1}`}
                   fill
                   loading="lazy"
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"

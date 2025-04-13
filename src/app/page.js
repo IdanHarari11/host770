@@ -7,23 +7,23 @@ import Booking from '@/components/sections/Booking';
 import GuestFeedback from '@/components/sections/GuestFeedback';
 export default function Home() {
   return (
-    <main className="rtl">
-      {/* טקסט SEO מוסתר לזחלני חיפוש בלבד */}
+    <main className="ltr">
+      {/* Hidden SEO text for search crawlers only */}
       <div className="hidden">
-        <h1>וילה אורית בגלבוע - אירוח יוקרתי עם בריכה פרטית ונוף מרהיב</h1>
+        <h1>Koosh Management Rental - Fully Furnished & Designed Apartments in Fort Lauderdale</h1>
         <p>
-          וילה אורית בגלבוע היא חלום של נופש משפחתי בצפון הארץ. הוילה היוקרתית ממוקמת בנקודה מושלמת עם נוף עוצר נשימה אל הרי הגלבוע והעמקים הירוקים. בכל אחת משתי יחידות האירוח תיהנו ממרחב פרטי מפנק הכולל שלושה חדרי שינה מרווחים, שני חדרי רחצה, מטבח מאובזר לחלוטין ומרפסת פרטית. הפינוק האמיתי ממתין לכם בבריכה הפרטית על הגג, שם תוכלו להתרענן ולהתרגע אל מול הנוף הפנורמי.
+          Koosh Management offers 15 fully furnished designer apartments for rent at the Griffin Project in Fort Lauderdale. 
+          Our modern 2-bedroom apartments feature a large central bathroom, fully equipped kitchens, and stylish white and cream aesthetic.
         </p>
         <p>
-          חופשה בוילה אורית מציעה לכם חוויית אירוח בוטיק בסטנדרט גבוה, מושלמת לחופשה רומנטית, נופש משפחתי או אירוח קבוצתי. המיקום האידיאלי בגלבוע מאפשר לכם ליהנות משקט וטבע לצד גישה נוחה למעיינות רעננים, מסלולי טיול מרהיבים ואטרקציות באזור. בין אם אתם מחפשים נופש פעיל בטבע או חופשה רגועה עם יין מול השקיעה, וילה אורית בגלבוע היא הבחירה המושלמת עבורכם.
+          Perfect for families and hi-tech professionals, our apartments provide both daily and monthly rental options. 
+          The new building includes amazing amenities such as a pool, gym, synagogue, kosher restaurants, and EV parking.
         </p>
-        <h2>אירוח פרטי ביחידות מפוארות בלב הטבע</h2>
-        <h2>חוויית נופש מושלמת בשתי בריכות פרטיות</h2>
-        <h2>מה מחכה לכם בוילה אורית?</h2>
-        <h3>פינוק אמיתי: מטבח מאובזר וחדרי שינה מרווחים</h3>
-        <h2>מיקום מנצח בגלבוע - קרוב למעיינות ומסלולי טיול</h2>
-        <h3>אטרקציות ופעילויות באזור הגלבוע</h3>
-        <h2>הזמינו את החופשה המושלמת בגלבוע</h2>
+        <h2>Modern Design & Fully Furnished Apartments</h2>
+        <h2>Ideal Location in Fort Lauderdale</h2>
+        <h2>Daily Rate: $120 / Monthly Rate: $3,000</h2>
+        <h3>Building Features Include Pool, Gym & Kosher Dining</h3>
+        <h2>Contact Yair at 954-319-7577 to Book Your Stay</h2>
       </div>
       
       <Hero />
@@ -37,9 +37,9 @@ export default function Home() {
   );
 }
 
-// מטה-תגיות עבור SEO
+// SEO Metadata 
 export const metadata = {
-  title: 'וילה אורית בגלבוע | נופש יוקרתי עם בריכה פרטית ונוף מרהיב',
-  description: 'וילה אורית בגלבוע מציעה אירוח יוקרתי עם 2 יחידות פרטיות, בריכות, נוף פנורמי והמון פרטיות. הזמינו עכשיו חופשה מושלמת בצפון בסביבה טבעית קסומה!',
-  keywords: 'וילה אורית בגלבוע, וילה פרטית בצפון, נופש עם בריכה פרטית, וילה עם בריכה על הגג, חופשה משפחתית בגלבוע, צימר יוקרתי בגלבוע, נופש בטבע, וילה עם נוף, אירוח בוטיק בצפון, וילה לאירוח קבוצות'
+  title: 'Koosh Management Rental | Fully Furnished Apartments in Fort Lauderdale',
+  description: 'Koosh Management offers fully furnished and designed apartments for rent in Fort Lauderdale. The building includes a pool, gym, synagogue, kosher restaurants, and more!',
+  keywords: 'Koosh Management, Rental Apartments, Fort Lauderdale, Fully Furnished, Griffin Project, Kosher Amenities, Luxury Apartments'
 }; 

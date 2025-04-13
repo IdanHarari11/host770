@@ -7,22 +7,22 @@ import dayjs from 'dayjs';
 import Button from '../ui/Button';
 
 const BookingCountdown = () => {
-  // נקבע תאריך יעד - הסופ"ש הקרוב
+  // Set target date - upcoming weekend
   const [targetDate, setTargetDate] = useState(null);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0 });
   
-  // כאשר הקומפוננטה נטענת, מחשבים את התאריך של סוף השבוע הקרוב
+  // When component loads, calculate the date for the upcoming weekend
   useEffect(() => {
     const now = dayjs();
-    const friday = now.day(5).hour(17).minute(0).second(0); // יום שישי בשעה 17:00
+    const friday = now.day(5).hour(17).minute(0).second(0); // Friday at 5:00 PM
     
-    // אם היום כבר יום שישי אחרי 17:00, קח את יום שישי הבא
+    // If today is already Friday after 5:00 PM, take next Friday
     const target = now.isAfter(friday) ? friday.add(7, 'day') : friday;
     
     setTargetDate(target);
   }, []);
   
-  // מעדכן את הטיימר בכל שנייה
+  // Update timer every second
   useEffect(() => {
     if (!targetDate) return;
     
@@ -30,7 +30,7 @@ const BookingCountdown = () => {
       const now = dayjs();
       
       if (now.isAfter(targetDate)) {
-        // אם הגענו לתאריך היעד, עדכן את התאריך לסופ"ש הבא
+        // If we reached the target date, update to next weekend
         const newTarget = targetDate.add(7, 'day');
         setTargetDate(newTarget);
         return;
@@ -48,14 +48,14 @@ const BookingCountdown = () => {
   }, [targetDate]);
   
   const handleCheckAvailability = () => {
-    // גלילה אל אזור ההזמנות בדף
+    // Scroll to the booking section
     const bookingSection = document.getElementById('booking');
     if (bookingSection) {
       bookingSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
   
-  // אנימציה לספרות
+  // Animation for numbers
   const numberVariants = {
     initial: { scale: 0.8, opacity: 0 },
     animate: { scale: 1, opacity: 1 },
@@ -63,16 +63,16 @@ const BookingCountdown = () => {
   };
   
   return (
-    <div className="bg-gradient-to-l from-[#4caf50]/10 to-[#4caf50]/20 p-6 lg:p-8 rounded-2xl shadow-lg">
+    <div className="bg-gradient-to-l from-[#f8f5e6]/40 to-[#f8f5e6]/80 p-6 lg:p-8 rounded-2xl shadow-lg">
       <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-        <div className="text-center lg:text-right">
+        <div className="text-center lg:text-left">
           <motion.h3 
-            className="text-2xl lg:text-3xl font-bold mb-3 text-[#4caf50]"
+            className="text-2xl lg:text-3xl font-bold mb-3 text-[#b19470]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            נותרו רק {timeLeft.days} ימים להזמין את הסופ"ש הקרוב!
+            Only {timeLeft.days} days left to book for this weekend!
           </motion.h3>
           <motion.p 
             className="text-gray-600"
@@ -80,16 +80,16 @@ const BookingCountdown = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            הבטיחו את מקומכם בוילה אורית בגלבוע לחופשה מושלמת
+            Secure your stay at Koosh Management Griffin Project for a perfect getaway
           </motion.p>
         </div>
         
         <div className="flex flex-col items-center">
           <div className="flex items-center justify-center gap-2 lg:gap-4 mb-4">
-            {/* ימים */}
+            {/* Days */}
             <div className="flex flex-col items-center">
               <motion.div 
-                className="bg-white w-16 lg:w-20 h-16 lg:h-20 rounded-lg shadow-md flex items-center justify-center text-2xl lg:text-3xl font-bold text-[#4caf50]"
+                className="bg-white w-16 lg:w-20 h-16 lg:h-20 rounded-lg shadow-md flex items-center justify-center text-2xl lg:text-3xl font-bold text-[#b19470]"
                 variants={numberVariants}
                 initial="initial"
                 animate="animate"
@@ -97,15 +97,15 @@ const BookingCountdown = () => {
               >
                 {timeLeft.days}
               </motion.div>
-              <span className="text-xs mt-1">ימים</span>
+              <span className="text-xs mt-1">days</span>
             </div>
             
             <span className="text-2xl">:</span>
             
-            {/* שעות */}
+            {/* Hours */}
             <div className="flex flex-col items-center">
               <motion.div 
-                className="bg-white w-16 lg:w-20 h-16 lg:h-20 rounded-lg shadow-md flex items-center justify-center text-2xl lg:text-3xl font-bold text-[#4caf50]"
+                className="bg-white w-16 lg:w-20 h-16 lg:h-20 rounded-lg shadow-md flex items-center justify-center text-2xl lg:text-3xl font-bold text-[#b19470]"
                 variants={numberVariants}
                 initial="initial"
                 animate="animate"
@@ -113,15 +113,15 @@ const BookingCountdown = () => {
               >
                 {timeLeft.hours}
               </motion.div>
-              <span className="text-xs mt-1">שעות</span>
+              <span className="text-xs mt-1">hours</span>
             </div>
             
             <span className="text-2xl">:</span>
             
-            {/* דקות */}
+            {/* Minutes */}
             <div className="flex flex-col items-center">
               <motion.div 
-                className="bg-white w-16 lg:w-20 h-16 lg:h-20 rounded-lg shadow-md flex items-center justify-center text-2xl lg:text-3xl font-bold text-[#4caf50]"
+                className="bg-white w-16 lg:w-20 h-16 lg:h-20 rounded-lg shadow-md flex items-center justify-center text-2xl lg:text-3xl font-bold text-[#b19470]"
                 variants={numberVariants}
                 initial="initial"
                 animate="animate"
@@ -129,7 +129,7 @@ const BookingCountdown = () => {
               >
                 {timeLeft.minutes}
               </motion.div>
-              <span className="text-xs mt-1">דקות</span>
+              <span className="text-xs mt-1">minutes</span>
             </div>
           </div>
           
@@ -143,7 +143,7 @@ const BookingCountdown = () => {
               className="flex items-center gap-2"
             >
               <FaClock />
-              <span>בדוק זמינות עכשיו</span>
+              <span>Check Availability Now</span>
             </Button>
           </motion.div>
         </div>

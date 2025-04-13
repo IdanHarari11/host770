@@ -5,14 +5,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaPhone, FaBars, FaTimes } from 'react-icons/fa';
 import Container from '../ui/Container';
 import Button from '../ui/Button';
+import Image from 'next/image';
 
 const navLinks = [
-  { name: 'בית', href: '#hero' },
-  { name: 'גלריה', href: '#gallery' },
-  { name: 'היחידות', href: '#villa-details' },
-  { name: 'מתקנים', href: '#amenities' },
-  { name: 'מיקום', href: '#location' },
-  { name: 'הזמנה', href: '#booking' },
+  { name: 'Home', href: '#hero' },
+  { name: 'Gallery', href: '#gallery' },
+  { name: 'Apartments', href: '#villa-details' },
+  { name: 'Features', href: '#amenities' },
+  { name: 'Location', href: '#location' },
+  { name: 'Booking', href: '#booking' },
 ];
 
 const Navbar = () => {
@@ -36,18 +37,25 @@ const Navbar = () => {
     >
       <Container className="flex justify-between items-center">
         <div className="flex-1">
-          <a href="#hero" className="text-2xl font-bold text-[#4caf50]">
-            וילה אורית בגלבוע
+          <a href="#hero" className="block">
+            <Image 
+              src="/logo.png" 
+              alt="Koosh Management Rental Logo" 
+              width={150} 
+              height={40} 
+              className="object-contain"
+              priority
+            />
           </a>
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-6 space-x-reverse">
+        <div className="hidden md:flex space-x-6">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-gray-800 hover:text-[#4caf50] transition-colors px-2"
+              className="text-gray-800 hover:text-[#b19470] transition-colors px-2"
             >
               {link.name}
             </a>
@@ -57,9 +65,9 @@ const Navbar = () => {
         <div className="hidden md:block">
           <Button 
             onClick={() => window.location.href = '#booking'}
-            className="mr-4"
+            className="ml-4"
           >
-            הזמינו עכשיו
+            Book Now
           </Button>
         </div>
 
@@ -67,7 +75,7 @@ const Navbar = () => {
         <div className="md:hidden">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="text-[#4caf50] focus:outline-none"
+            className="text-[#b19470] focus:outline-none"
           >
             {isMobileMenuOpen ? (
               <FaTimes className="h-6 w-6" />
@@ -93,7 +101,7 @@ const Navbar = () => {
                   <a
                     key={link.name}
                     href={link.href}
-                    className="text-gray-800 hover:text-[#4caf50] transition-colors py-2 px-2"
+                    className="text-gray-800 hover:text-[#b19470] transition-colors py-2 px-2"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.name}
@@ -105,15 +113,15 @@ const Navbar = () => {
                     setIsMobileMenuOpen(false);
                   }}
                 >
-                  הזמינו עכשיו
+                  Book Now
                 </Button>
                 <a 
-                  href="tel:+972543199489" 
-                  className="flex items-center justify-center space-x-2 space-x-reverse text-[#4caf50] py-2"
+                  href="tel:+19543197577" 
+                  className="flex items-center justify-center space-x-2 text-[#b19470] py-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <FaPhone />
-                  <span>התקשרו אלינו</span>
+                  <span>Call Us</span>
                 </a>
               </div>
             </Container>

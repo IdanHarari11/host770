@@ -2,26 +2,26 @@
 
 import { motion } from 'framer-motion';
 import { 
-  FaBed, FaBath, FaWifi, FaParking, FaTv, FaWater, 
+  FaBed, FaBath, FaWifi, FaParking, FaTv, 
   FaSnowflake, FaUtensils, FaCoffee, FaSwimmingPool, 
-  FaWalking, FaTree, FaMountain
+  FaStore, FaDumbbell, FaHotel, FaStar, FaChargingStation
 } from 'react-icons/fa';
 import Section from '../ui/Section';
 import Card from '../ui/Card';
 
 const amenities = [
-  { icon: <FaBed />, title: 'מיטות נוחות', description: 'מיטות איכותיות עם מזרנים אורתופדיים ומצעים רכים' },
-  { icon: <FaWifi />, title: 'WiFi חופשי', description: 'אינטרנט מהיר וחזק בכל רחבי הווילה' },
-  { icon: <FaSnowflake />, title: 'מיזוג אוויר', description: 'בכל החדרים והאזורים המשותפים' },
-  { icon: <FaTv />, title: 'טלוויזיה חכמה', description: 'מסכי Smart TV עם נטפליקס וערוצי כבלים' },
-  { icon: <FaSwimmingPool />, title: 'בריכה פרטית', description: 'בריכת שחייה עם נוף מרהיב להרים' },
-  { icon: <FaUtensils />, title: 'מטבח מאובזר', description: 'מטבח מלא עם כל הציוד הנדרש לבישול ואירוח' },
-  { icon: <FaCoffee />, title: 'מכונת קפה', description: 'מכונת אספרסו וקפסולות קפה מובחרות' },
-  { icon: <FaBath />, title: 'מגבות ומוצרי טיפוח', description: 'מגבות רכות ומוצרי טיפוח איכותיים' },
-  { icon: <FaParking />, title: 'חניה פרטית', description: 'חניה פרטית וצמודה ללא עלות' },
-  { icon: <FaWater />, title: 'מים חמים 24/7', description: 'מים חמים זמינים תמיד במקלחות ובכיורים' },
-  { icon: <FaWalking />, title: 'מסלולי טיול', description: 'גישה קלה למסלולי טיול נפלאים באזור' },
-  { icon: <FaMountain />, title: 'נוף מרהיב', description: 'נוף פנורמי עוצר נשימה אל הרי הגלבוע' },
+  { icon: <FaSwimmingPool />, title: 'Pool', description: 'Access to the building\'s beautiful swimming pool' },
+  { icon: <FaDumbbell />, title: 'Gym', description: 'Fully equipped fitness center for residents' },
+  { icon: <FaStar />, title: 'Synagogue', description: 'Convenient on-site synagogue' },
+  { icon: <FaUtensils />, title: 'Kosher Mexican Restaurant', description: 'Authentic kosher Mexican cuisine in the building' },
+  { icon: <FaUtensils />, title: 'Kosher Italian Restaurant', description: 'Delicious kosher Italian food just steps away' },
+  { icon: <FaCoffee />, title: 'Kosher Café', description: 'Perfect spot for coffee and light kosher meals' },
+  { icon: <FaStore />, title: 'UPS Store', description: 'Convenient shipping and business services' },
+  { icon: <FaStore />, title: 'Super-Pharm', description: 'Pharmacy and convenience store in the building' },
+  { icon: <FaChargingStation />, title: 'EV Parking', description: 'Electric vehicle charging stations available' },
+  { icon: <FaBed />, title: 'Fully Furnished', description: 'All apartments come completely furnished' },
+  { icon: <FaHotel />, title: 'Modern Design', description: 'Elegant white + cream aesthetic throughout' },
+  { icon: <FaWifi />, title: 'Free WiFi', description: 'High-speed internet access in all apartments' },
 ];
 
 const container = {
@@ -47,9 +47,9 @@ const Amenities = () => {
   return (
     <Section 
       id="amenities" 
-      title="מתקנים ושירותים"
-      subtitle="כל מה שתצטרכו לחופשה מושלמת ב״וילה אורית״"
-      bgColor="bg-[#f5f5f5]"
+      title="Building Features"
+      subtitle="🏢 In the New Building"
+      bgColor="bg-[#f8f5e6]"
     >
       <motion.div 
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
@@ -62,7 +62,7 @@ const Amenities = () => {
           <motion.div key={index} variants={item}>
             <Card>
               <div className="flex flex-col items-center text-center">
-                <div className="text-4xl text-[#4caf50] mb-4">{amenity.icon}</div>
+                <div className="text-4xl text-[#b19470] mb-4">{amenity.icon}</div>
                 <h3 className="text-xl font-bold mb-2">{amenity.title}</h3>
                 <p className="text-gray-600">{amenity.description}</p>
               </div>
@@ -71,7 +71,7 @@ const Amenities = () => {
         ))}
       </motion.div>
 
-      {/* Video Section */}
+      {/* Special Notice Section */}
       <motion.div 
         className="mt-16"
         initial={{ opacity: 0, y: 20 }}
@@ -79,16 +79,11 @@ const Amenities = () => {
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.6 }}
       >
-        <h3 className="text-2xl font-bold mb-6 text-center">התרשמו מהוילה</h3>
-        <div className="rounded-xl overflow-hidden shadow-2xl">
-          <video 
-            controls 
-            className="w-full h-auto"
-            poster="/image/WhatsApp Image 2025-04-09 at 09.27.41 (1).jpeg"
-          >
-            <source src="/image/WhatsApp Video 2025-04-09 at 09.27.42.mp4" type="video/mp4" />
-            הדפדפן שלך אינו תומך בתגית וידאו.
-          </video>
+        <h3 className="text-2xl font-bold mb-6 text-center text-[#b19470]">✅ Ideal for Families & Hi-Tech Professionals</h3>
+        <div className="bg-white p-6 rounded-xl shadow-md text-center">
+          <p className="text-lg">
+            The building includes <strong>15 fully furnished designer apartments</strong>, move-in ready for tenants.
+          </p>
         </div>
       </motion.div>
     </Section>

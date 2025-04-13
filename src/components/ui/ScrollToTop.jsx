@@ -7,7 +7,7 @@ import { FaArrowUp } from 'react-icons/fa';
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // בדיקה אם לראות את הכפתור, על סמך מרחק הגלילה
+  // Check if button should be visible, based on scroll distance
   useEffect(() => {
     const toggleVisibility = () => {
       if (window.scrollY > 300) {
@@ -21,7 +21,7 @@ const ScrollToTop = () => {
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
-  // פונקציה שגוללת בחזרה לחלק העליון
+  // Function to scroll back to top
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -37,8 +37,8 @@ const ScrollToTop = () => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.5 }}
           onClick={scrollToTop}
-          className="fixed bottom-6 left-6 z-50 bg-[#4caf50] text-white p-3 rounded-full shadow-lg hover:bg-[#3d8b40] transition-colors"
-          aria-label="גלול למעלה"
+          className="fixed bottom-6 left-6 z-50 bg-[#b19470] text-white p-3 rounded-full shadow-lg hover:bg-[#9a8060] transition-colors"
+          aria-label="Scroll to top"
         >
           <FaArrowUp />
         </motion.button>
