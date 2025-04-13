@@ -13,7 +13,6 @@ const images = [
   { url: '/image/WhatsApp Image 2025-04-09 at 09.25.29.jpeg', alt: 'חדר שינה מפואר' },
   { url: '/image/WhatsApp Image 2025-04-09 at 09.25.30 (1).jpeg', alt: 'מטבח מאובזר' },
   { url: '/image/WhatsApp Image 2025-04-09 at 09.25.31 (1).jpeg', alt: 'סלון מרווח' },
-  { url: '/image/WhatsApp Image 2025-04-09 at 09.27.04.jpeg', alt: 'אזור אירוח' },
   { url: '/image/WhatsApp Image 2025-04-09 at 09.27.17 (3).jpeg', alt: 'פינת אוכל' },
   { url: '/image/WhatsApp Image 2025-04-09 at 09.27.20.jpeg', alt: 'מרפסת עם נוף' },
 ];
