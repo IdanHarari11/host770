@@ -7,12 +7,13 @@ import Section from '../ui/Section';
 import Image from 'next/image';
 
 const images = [
-  { url: '/images/7a278e47-9e3c-46dd-adda-d54125c62ccb.jpeg', alt: 'Bathroom' },
-  { url: '/images/b1e850ee-bed8-469f-abef-2cea45598032.jpeg', alt: 'Balcony' },
-  { url: '/images/ad74bedd-96e2-4791-bdba-f7e9fa4549dc.jpeg', alt: 'Pool' },
-  { url: '/images/38acfcb3-bfa9-41e4-bc69-3ab0b6db18c4.avif', alt: 'Living Room' },
-  { url: '/images/90cfc175-8fe1-4b62-85c9-472044e04a11.jpeg', alt: 'Kitchen' },
-  { url: '/images/92bd4d1e-ea2d-4fdb-b2ca-bcfd32be57d1.jpeg', alt: 'Gym' },
+  { url: '/images/v2/WhatsApp Image 2025-04-14 at 01.47.15.jpeg', alt: 'living room' },
+  { url: '/images/v2/WhatsApp Image 2025-04-14 at 01.47.15 (1).jpeg', alt: 'bedroom' },
+  { url: '/images/v2/WhatsApp Image 2025-04-14 at 01.47.16.jpeg', alt: 'Living Room' },
+  { url: '/images/v2/WhatsApp Image 2025-04-14 at 01.47.16 (1).jpeg', alt: 'Kitchen' },
+  { url: '/images/v2/WhatsApp Image 2025-04-14 at 01.47.15 (2).jpeg', alt: 'bedroom' },
+  { url: '/images/v2/WhatsApp Image 2025-04-14 at 01.48.08.jpeg', alt: 'bathroom' },
+  { url: '/images/v2/WhatsApp Image 2025-04-14 at 01.48.08 (1).jpeg', alt: 'Study' },
 ];
 
 const Gallery = () => {
@@ -75,9 +76,6 @@ const Gallery = () => {
                   quality={75}
                   className="object-cover"
                 />
-              <div className="absolute top-0 inset-x-0 bg-gradient-to-t from-transparent to-white p-4 text-black">
-                <p className="text-lg md:text-xl">{image.alt}</p>
-              </div>
               </div>
             </motion.div>
           ))}
@@ -120,14 +118,13 @@ const Gallery = () => {
         <h3 className="text-2xl font-bold mb-8 text-center text-[#b19470]">More Images</h3>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {[
-            '/images/04774bb9-27fe-44b1-9cd0-2e35428a142b.jpeg',
-            '/images/7cb7c46e-0f53-4fc1-9e17-2bb7e9cff0c6.jpeg',
-            '/images/92bd4d1e-ea2d-4fdb-b2ca-bcfd32be57d1.jpeg',
-            '/images/eb97bd0e-05c0-4bd5-8cf3-e3d719259f02.jpeg',
-            '/images/ebea32fc-21e2-46c0-a770-553accef4680.jpeg',
-            '/images/0b993463-8415-46ba-9004-57257ecebf5d.jpeg',
-            '/images/7a278e47-9e3c-46dd-adda-d54125c62ccb.jpeg',
-            '/images/0111e94d-85cc-4af8-b978-3a7065cedaa5.jpeg',
+            '/images/v2/WhatsApp Image 2025-04-14 at 01.47.15.jpeg',
+            '/images/v2/WhatsApp Image 2025-04-14 at 01.47.15 (1).jpeg',
+            '/images/v2/WhatsApp Image 2025-04-14 at 01.47.15 (2).jpeg',
+            '/images/v2/WhatsApp Image 2025-04-14 at 01.47.16.jpeg',
+            '/images/v2/WhatsApp Image 2025-04-14 at 01.47.16 (1).jpeg',
+            '/images/v2/WhatsApp Image 2025-04-14 at 01.48.08.jpeg',
+            '/images/v2/WhatsApp Image 2025-04-14 at 01.48.08 (1).jpeg',
           ].map((img, index) => (
             <motion.div
               key={index}
