@@ -10,7 +10,7 @@ const images = [
   { url: '/images/7a278e47-9e3c-46dd-adda-d54125c62ccb.jpeg', alt: 'Bathroom' },
   { url: '/images/b1e850ee-bed8-469f-abef-2cea45598032.jpeg', alt: 'Balcony' },
   { url: '/images/ad74bedd-96e2-4791-bdba-f7e9fa4549dc.jpeg', alt: 'Pool' },
-  { url: '/images/38acfcb3-bfa9-41e4-bc69-3ab0b6db18c4.avif', alt: 'Living Area' },
+  { url: '/images/38acfcb3-bfa9-41e4-bc69-3ab0b6db18c4.avif', alt: 'Living Room' },
   { url: '/images/90cfc175-8fe1-4b62-85c9-472044e04a11.jpeg', alt: 'Kitchen' },
   { url: '/images/92bd4d1e-ea2d-4fdb-b2ca-bcfd32be57d1.jpeg', alt: 'Gym' },
 ];
