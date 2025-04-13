@@ -5,6 +5,7 @@ import Footer from '@/components/layout/Footer';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 import NagishLi from '@/components/ui/NagishLi';
 import Script from 'next/script';
+import GoogleTagManager, { GoogleTagManagerNoScript } from '@/components/analytics/GoogleTagManager';
 
 // הגדרת הפונט רוביק לעברית
 const rubik = Rubik({
@@ -71,6 +72,8 @@ export default function RootLayout({ children }) {
         <meta name="theme-color" content="#4a7c59" />
       </head>
       <body className={`${rubik.variable} font-rubik bg-white text-slate-800`}>
+        {/* Google Tag Manager (noscript) */}
+        <GoogleTagManagerNoScript gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
         <Navbar />
         {children}
         <ScrollToTop />
@@ -170,6 +173,9 @@ export default function RootLayout({ children }) {
             })
           }}
         />
+        
+        {/* Google Tag Manager */}
+        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
       </body>
     </html>
   );
