@@ -7,15 +7,12 @@ import Section from '../ui/Section';
 import Image from 'next/image';
 
 const images = [
-  { url: '/image/WhatsApp Image 2025-04-09 at 09.27.32.jpeg', alt: 'וילה אורית - חזית הבית' },
-  { url: '/image/WhatsApp Image 2025-04-09 at 09.27.31.jpeg', alt: 'נוף מרהיב לגלבוע' },
-  { url: '/image/WhatsApp Image 2025-04-09 at 09.27.13.jpeg', alt: 'בריכת שחייה פרטית' },
-  { url: '/image/WhatsApp Image 2025-04-09 at 09.27.14.jpeg', alt: 'אזור ישיבה חיצוני' },
-  { url: '/image/WhatsApp Image 2025-04-09 at 09.25.29.jpeg', alt: 'חדר שינה מפואר' },
-  { url: '/image/WhatsApp Image 2025-04-09 at 09.25.30 (1).jpeg', alt: 'מטבח מאובזר' },
-  { url: '/image/WhatsApp Image 2025-04-09 at 09.25.31 (1).jpeg', alt: 'סלון מרווח' },
-  { url: '/image/WhatsApp Image 2025-04-09 at 09.27.17 (3).jpeg', alt: 'פינת אוכל' },
-  { url: '/image/WhatsApp Image 2025-04-09 at 09.27.20.jpeg', alt: 'מרפסת עם נוף' },
+  { url: '/image/WhatsApp Image 2025-04-09 at 09.27.31.jpeg', alt: 'וילה אורית - חזית הבית' },
+  { url: '/image/WhatsApp Image 2025-04-09 at 09.27.13.jpeg', alt: 'מטבח מאובזר' },
+  { url: '/image/WhatsApp Image 2025-04-09 at 09.25.29.jpeg', alt: 'בריכת שחייה פרטית' },
+  { url: '/image/WhatsApp Image 2025-04-09 at 09.25.30 (1).jpeg', alt: 'חדרים מפוארים' },
+  { url: '/image/WhatsApp Image 2025-04-13 at 06.43.28.jpeg', alt: 'פינת אוכל' },
+  { url: '/image/WhatsApp Image 2025-04-09 at 09.27.21.jpeg', alt: 'חלל מרווח' },
 ];
 
 const Gallery = () => {
@@ -78,9 +75,9 @@ const Gallery = () => {
                   quality={75}
                   className="object-cover"
                 />
-              </div>
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black to-transparent p-4 text-white">
+              <div className="absolute top-0 inset-x-0 bg-gradient-to-t from-transparent to-white p-4 text-black">
                 <p className="text-lg md:text-xl">{image.alt}</p>
+              </div>
               </div>
             </motion.div>
           ))}
@@ -104,7 +101,7 @@ const Gallery = () => {
         </button>
         
         {/* Thumbnails */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
+        <div className="absolute gap-[3rem] bottom-4 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
           {images.map((_, index) => (
             <button
               key={index}

@@ -4,7 +4,7 @@ import VillaDetails from '@/components/sections/VillaDetails';
 import Amenities from '@/components/sections/Amenities';
 import Location from '@/components/sections/Location';
 import Booking from '@/components/sections/Booking';
-
+import GuestFeedback from '@/components/sections/GuestFeedback';
 export default function Home() {
   return (
     <main className="rtl">
@@ -32,6 +32,7 @@ export default function Home() {
       <Amenities />
       <Location />
       <Booking />
+      <GuestFeedback />
     </main>
   );
 }

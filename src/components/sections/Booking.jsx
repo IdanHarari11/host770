@@ -2,9 +2,10 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaCalendarAlt, FaUsers, FaWhatsapp, FaPhone, FaEnvelope, FaCheck } from 'react-icons/fa';
+import { FaUsers, FaWhatsapp, FaPhone, FaEnvelope, FaCheck, FaCalendarAlt } from 'react-icons/fa';
 import Section from '../ui/Section';
 import Button from '../ui/Button';
+import BookingCountdown from './BookingCountdown';
 
 const Booking = () => {
   const [formData, setFormData] = useState({
@@ -243,40 +244,10 @@ const Booking = () => {
           )}
         </div>
         
-        {/* Availability & Contact Info */}
+        {/* Countdown & Contact Info - החלפנו את החלק של זמינות וסטטוס הזמנות */}
         <div className="flex flex-col gap-6">
-          <div className="bg-white p-6 rounded-2xl shadow-lg">
-            <h3 className="text-xl font-bold mb-4">זמינות וסטטוס הזמנות</h3>
-            <p className="text-gray-600 mb-6">
-              לוח הזמינות שלנו מתעדכן באופן שוטף. מומלץ לבדוק זמינות מראש ולהזמין בהקדם, במיוחד בעונות השיא וסופי שבוע.
-            </p>
-            
-            <div className="mb-6">
-              <div className="flex items-center mb-2">
-                <div className="w-4 h-4 bg-red-500 rounded-full mr-2"></div>
-                <span>תפוס</span>
-              </div>
-              <div className="flex items-center mb-2">
-                <div className="w-4 h-4 bg-yellow-500 rounded-full mr-2"></div>
-                <span>זמינות חלקית</span>
-              </div>
-              <div className="flex items-center">
-                <div className="w-4 h-4 bg-green-500 rounded-full mr-2"></div>
-                <span>פנוי</span>
-              </div>
-            </div>
-            
-            <Button 
-              onClick={() => window.open('https://calendar.google.com', '_blank')}
-              variant="secondary"
-              className="w-full"
-            >
-              <div className="flex items-center justify-center gap-2">
-                <FaCalendarAlt />
-                <span>צפה בלוח זמינות מלא</span>
-              </div>
-            </Button>
-          </div>
+          {/* Booking Countdown */}
+          <BookingCountdown />
           
           <div className="bg-white p-6 rounded-2xl shadow-lg">
             <h3 className="text-xl font-bold mb-4">צרו קשר ישירות</h3>
