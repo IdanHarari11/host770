@@ -14,6 +14,7 @@ const images = [
   { url: '/images/v2/WhatsApp Image 2025-04-14 at 01.47.15 (2).jpeg', alt: 'bedroom' },
   { url: '/images/v2/WhatsApp Image 2025-04-14 at 01.48.08.jpeg', alt: 'bathroom' },
   { url: '/images/v2/WhatsApp Image 2025-04-14 at 01.48.08 (1).jpeg', alt: 'Study' },
+  { url: '/images/38acfcb3-bfa9-41e4-bc69-3ab0b6db18c4.avif', alt: 'living room' },
 ];
 
 const Gallery = () => {
