@@ -176,6 +176,20 @@ export default function RootLayout({ children }) {
         
         {/* Google Tag Manager */}
         <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
+        
+        {/* זמני - קוד ישיר של GA4 לבדיקה */}
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=G-N8LN3BLJVY`}
+        />
+        <Script id="ga4-direct" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-N8LN3BLJVY');
+          `}
+        </Script>
       </body>
     </html>
   );
