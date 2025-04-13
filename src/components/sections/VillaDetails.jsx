@@ -9,7 +9,7 @@ const VillaDetails = () => {
   const units = [
     {
       name: 'יחידה 1 - הסוויטה המפוארת',
-      image: '/image/WhatsApp Image 2025-04-09 at 09.27.32 (1).jpeg',
+      image: '/image/WhatsApp Image 2025-04-09 at 09.25.33 (1).jpeg',
       desc: 'יחידה מרווחת המתאימה למשפחות עם נוף מדהים לגלבוע, בריכה פרטית וחצר מפנקת.',
       capacity: 12,
       bedrooms: 3,
@@ -17,7 +17,7 @@ const VillaDetails = () => {
       features: [
         { icon: <FaBed />, text: '3 חדרי שינה מפוארים' },
         { icon: <FaBath />, text: '2 חדרי רחצה מאובזרים' },
-        { icon: <FaSwimmingPool />, text: 'בריכה פרטית עם נוף' },
+        { icon: <FaSwimmingPool />, text: 'בריכה עם נוף' },
         { icon: <FaUtensils />, text: 'מטבח מאובזר במלואו' },
         { icon: <FaTemperatureHigh />, text: 'מזגן בכל חדר' },
         { icon: <FaWifi />, text: 'WiFi חופשי' },
@@ -25,14 +25,14 @@ const VillaDetails = () => {
     },
     {
       name: 'יחידה 2 - הסוויטה המשפחתית',
-      image: '/image/WhatsApp Image 2025-04-09 at 09.27.04 (1).jpeg',
+      image: '/image/WhatsApp Image 2025-04-09 at 09.25.30 (2).jpeg',
       desc: 'יחידה אינטימית וייחודית, מושלמת לזוגות, עם מרפסת פרטית ונוף פתוח לטבע.',
       capacity: 12,
-      bedrooms: 2,
-      bathrooms: 1,
+      bedrooms: 3,
+      bathrooms: 2,
       features: [
-        { icon: <FaBed />, text: '2 חדרי שינה נעימים' },
-        { icon: <FaBath />, text: 'חדר רחצה מאובזר' },
+        { icon: <FaBed />, text: '3 חדרי שינה נעימים' },
+        { icon: <FaBath />, text: '2 חדרי רחצה מאובזרים' },
         { icon: <FaSwimmingPool />, text: 'גישה לבריכה משותפת' },
         { icon: <FaUtensils />, text: 'מטבחון מאובזר' },
         { icon: <FaTemperatureHigh />, text: 'מזגן בכל חדר' },

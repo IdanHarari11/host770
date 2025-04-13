@@ -2,6 +2,8 @@ import { Rubik } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import ScrollToTop from '@/components/ui/ScrollToTop';
+import Accessibility from '@/components/ui/Accessibility';
 
 // הגדרת הפונט רוביק לעברית
 const rubik = Rubik({
@@ -21,6 +23,8 @@ export default function RootLayout({ children }) {
       <body className={`${rubik.variable} font-rubik bg-white text-slate-800`}>
         <Navbar />
         {children}
+        <ScrollToTop />
+        <Accessibility />
         <Footer />
       </body>
     </html>

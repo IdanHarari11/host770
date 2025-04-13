@@ -7,6 +7,13 @@
   --secondary-color: #87ceeb;
   --accent-color: #f5f5dc;
   --text-color: #333333;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --accessibility-font-size: 0px;
+  --glass-bg: rgba(255, 255, 255, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
 }
 
 html,
@@ -14,6 +21,33 @@ body {
   direction: rtl;
   text-align: right;
   scroll-behavior: smooth;
+}
+
+/* קוד תמיכה בנגישות */
+p, h1, h2, h3, h4, h5, h6, a, button, li, span, label, input, textarea, select {
+  font-size: calc(1em + var(--accessibility-font-size));
+}
+
+.rtl {
+  direction: rtl;
+}
+
+/* תמיכה בעיצוב glassmorphism */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 @layer components {

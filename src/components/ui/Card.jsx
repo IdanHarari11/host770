@@ -9,20 +9,24 @@ const Card = ({
   subtitle,
   className = '',
   withAnimation = true,
+  isGlass = false,
   ...props 
 }) => {
+  // קביעת המחלקות של הכרטיס בהתאם לפרמטרים
+  const cardClass = `${isGlass ? 'glass-card' : 'card'} ${className}`;
+  
   const cardContent = (
     <div 
-      className={`card ${className}`} 
+      className={cardClass} 
       {...props}
     >
       {icon && (
-        <div className="text-[#4caf50] text-4xl mb-4">
+        <div className={`${isGlass ? 'text-slate-800' : 'text-[#4caf50]'} text-4xl mb-4`}>
           {icon}
         </div>
       )}
       {title && <h3 className="text-xl font-bold mb-2">{title}</h3>}
-      {subtitle && <p className="text-gray-600 mb-4">{subtitle}</p>}
+      {subtitle && <p className={`${isGlass ? 'text-slate-700' : 'text-gray-600'} mb-4`}>{subtitle}</p>}
       {children}
     </div>
   );
