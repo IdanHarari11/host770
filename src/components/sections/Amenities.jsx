@@ -10,7 +10,7 @@ import Card from '../ui/Card';
 
 const amenities = [
   { icon: <FaDumbbell />, title: 'Gym', description: 'Fully equipped fitness center for residents' },
-  
+  { icon: <FaWifi />, title: 'Free WiFi', description: 'High-speed internet access in all apartments' },
   { icon: <FaStar />, title: 'Synagogue', description: 'Convenient on-site synagogue' },
   { icon: <FaUtensils />, title: 'Kosher Mexican Restaurant', description: 'Authentic kosher Mexican cuisine in the building' },
   { icon: <FaUtensils />, title: 'Kosher Italian Restaurant', description: 'Delicious kosher Italian food just steps away' },
@@ -18,7 +18,6 @@ const amenities = [
   { icon: <FaStore />, title: 'UPS Store', description: 'Convenient shipping and business services' },
   { icon: <FaStore />, title: 'Super-Pharm', description: 'Pharmacy and convenience store in the building' },
   { icon: <FaChargingStation />, title: 'EV Parking', description: 'Electric vehicle charging stations available' },
-  { icon: <FaWifi />, title: 'Free WiFi', description: 'High-speed internet access in all apartments' },
 ];
 
 const container = {
