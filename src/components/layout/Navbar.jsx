@@ -45,6 +45,7 @@ const Navbar = () => {
               height={40} 
               className="object-contain"
               priority
+              loading="eager"
             />
           </a>
         </div>

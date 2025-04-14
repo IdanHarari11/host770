@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { FaBed, FaBath, FaUsers, FaSwimmingPool, FaUtensils, FaWifi, FaTemperatureHigh, FaDollarSign } from 'react-icons/fa';
 import Section from '../ui/Section';
 import Card from '../ui/Card';
+import Image from 'next/image';
 
 const VillaDetails = () => {
   const units = [
@@ -42,10 +43,15 @@ const VillaDetails = () => {
           >
             <Card className="h-full flex flex-col">
               <div className="relative h-64 mb-4 overflow-hidden rounded-xl">
-                <img 
+                <Image 
                   src={unit.image} 
                   alt={unit.name} 
+                  fill
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
+                  priority={index === 0}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={75}
                 />
                 <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-bold text-[#b19470] shadow-md">
                   <div className="flex items-center gap-2">

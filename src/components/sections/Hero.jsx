@@ -50,6 +50,7 @@ const Hero = () => {
             placeholder="blur"
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJ5MUZMpgAAAABJRU5ErkJggg=="
             className="object-cover"
+            loading={index === 0 ? "eager" : "lazy"}
           />
         </div>
       ))}
