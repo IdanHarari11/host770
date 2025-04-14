@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { FaArrowRight, FaArrowLeft, FaExpand } from 'react-icons/fa';
+import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 import Section from '../ui/Section';
 import Image from 'next/image';
 
@@ -15,6 +15,7 @@ const images = [
   { url: '/images/v2/WhatsApp Image 2025-04-14 at 01.48.08.jpeg', alt: 'bathroom' },
   { url: '/images/v2/WhatsApp Image 2025-04-14 at 01.48.08 (1).jpeg', alt: 'Study' },
   { url: '/images/38acfcb3-bfa9-41e4-bc69-3ab0b6db18c4.avif', alt: 'living room' },
+  { url: '/images/7a278e47-9e3c-46dd-adda-d54125c62ccb.jpeg', alt: 'bathroom' },
 ];
 
 const Gallery = () => {
@@ -118,15 +119,7 @@ const Gallery = () => {
       <div className="mt-16">
         <h3 className="text-2xl font-bold mb-8 text-center text-[#b19470]">More Images</h3>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {[
-            '/images/v2/WhatsApp Image 2025-04-14 at 01.47.15.jpeg',
-            '/images/v2/WhatsApp Image 2025-04-14 at 01.47.15 (1).jpeg',
-            '/images/v2/WhatsApp Image 2025-04-14 at 01.47.15 (2).jpeg',
-            '/images/v2/WhatsApp Image 2025-04-14 at 01.47.16.jpeg',
-            '/images/v2/WhatsApp Image 2025-04-14 at 01.47.16 (1).jpeg',
-            '/images/v2/WhatsApp Image 2025-04-14 at 01.48.08.jpeg',
-            '/images/v2/WhatsApp Image 2025-04-14 at 01.48.08 (1).jpeg',
-          ].map((img, index) => (
+          {images.map((img, index) => (
             <motion.div
               key={index}
               className="relative aspect-square overflow-hidden rounded-lg cursor-pointer"
@@ -136,14 +129,14 @@ const Gallery = () => {
               transition={{ duration: 0.3, delay: index * 0.05 }}
               whileHover={{ scale: 1.05 }}
               onClick={() => {
-                setCurrentIndex(images.findIndex(image => image.url === img) !== -1 
-                  ? images.findIndex(image => image.url === img) 
+                setCurrentIndex(images.findIndex(image => image.url === img.url) !== -1 
+                  ? images.findIndex(image => image.url === img.url) 
                   : 0);
               }}
             >
               <div className="relative w-full h-full">
                 <Image
-                  src={img}
+                  src={img.url}
                   alt={`Additional apartment image ${index + 1}`}
                   fill
                   loading="lazy"

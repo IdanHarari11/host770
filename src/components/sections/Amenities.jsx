@@ -16,7 +16,7 @@ const amenities = [
   { icon: <FaUtensils />, title: 'Kosher Italian Restaurant', description: 'Delicious kosher Italian food just steps away' },
   { icon: <FaCoffee />, title: 'Kosher Café', description: 'Perfect spot for coffee and light kosher meals' },
   { icon: <FaStore />, title: 'UPS Store', description: 'Convenient shipping and business services' },
-  { icon: <FaStore />, title: 'Super-Pharm', description: 'Pharmacy and convenience store in the building' },
+  { icon: <FaStore />, title: 'Super-Pharm', description: 'Pharmacy store in the building' },
   { icon: <FaChargingStation />, title: 'EV Parking', description: 'Electric vehicle charging stations available' },
 ];
 
