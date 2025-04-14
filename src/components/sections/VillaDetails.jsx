@@ -5,8 +5,12 @@ import { FaBed, FaBath, FaUsers, FaSwimmingPool, FaUtensils, FaWifi, FaTemperatu
 import Section from '../ui/Section';
 import Card from '../ui/Card';
 import Image from 'next/image';
+import Skeleton from '../ui/Skeleton';
+import { useState } from 'react';
 
 const VillaDetails = () => {
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+  
   const units = [
     {
       name: 'Fully Furnished & Designed Apartment',
@@ -43,6 +47,9 @@ const VillaDetails = () => {
           >
             <Card className="h-full flex flex-col">
               <div className="relative h-64 mb-4 overflow-hidden rounded-xl">
+                {!imagesLoaded && (
+                  <Skeleton className="absolute inset-0 w-full h-full" />
+                )}
                 <Image 
                   src={unit.image} 
                   alt={unit.name} 
@@ -52,6 +59,7 @@ const VillaDetails = () => {
                   loading={index === 0 ? "eager" : "lazy"}
                   sizes="(max-width: 768px) 100vw, 50vw"
                   quality={75}
+                  onLoad={() => setImagesLoaded(true)}
                 />
                 <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-bold text-[#b19470] shadow-md">
                   <div className="flex items-center gap-2">

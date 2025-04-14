@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Button from '../ui/Button';
+import Skeleton from '../ui/Skeleton';
 
 const backgroundImages = [
   '/images/7f6dc8f1-3fd1-4a33-a24c-9f349be21a8c.avif',
@@ -14,6 +15,7 @@ const backgroundImages = [
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -31,6 +33,9 @@ const Hero = () => {
       className="relative h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background Images */}
+      {!imagesLoaded && (
+        <Skeleton className="absolute inset-0 w-full h-full" />
+      )}
       {backgroundImages.map((image, index) => (
         <div 
           key={index}
@@ -51,6 +56,7 @@ const Hero = () => {
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJ5MUZMpgAAAABJRU5ErkJggg=="
             className="object-cover"
             loading={index === 0 ? "eager" : "lazy"}
+            onLoad={() => setImagesLoaded(true)}
           />
         </div>
       ))}

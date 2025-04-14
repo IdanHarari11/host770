@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 import Section from '../ui/Section';
 import Image from 'next/image';
+import Skeleton from '../ui/Skeleton';
 
 const images = [
   { url: '/images/v2/WhatsApp Image 2025-04-14 at 01.47.15.jpeg', alt: 'living room' },
@@ -19,6 +20,7 @@ const images = [
 
 const Gallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
   
   const goToNext = useCallback(() => {
     setCurrentIndex((prevIndex) => 
@@ -57,6 +59,9 @@ const Gallery = () => {
         
         {/* Images */}
         <div className="relative w-full h-full">
+          {!imagesLoaded && (
+            <Skeleton className="absolute inset-0 w-full h-full" />
+          )}
           {images.map((image, index) => (
             <motion.div
               key={index}
@@ -78,6 +83,7 @@ const Gallery = () => {
                   className="object-cover"
                   priority={index === 0}
                   loading={index === 0 ? "eager" : "lazy"}
+                  onLoad={() => setImagesLoaded(true)}
                 />
               </div>
             </motion.div>
@@ -120,6 +126,13 @@ const Gallery = () => {
       <div className="mt-16">
         <h3 className="text-2xl font-bold mb-8 text-center text-[#b19470]">More Images</h3>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {!imagesLoaded && (
+            <>
+              {[...Array(8)].map((_, index) => (
+                <Skeleton key={index} className="aspect-square rounded-lg" />
+              ))}
+            </>
+          )}
           {images.map((img, index) => (
             <motion.div
               key={index}
@@ -144,6 +157,7 @@ const Gallery = () => {
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   quality={65}
                   className="object-cover"
+                  onLoad={() => setImagesLoaded(true)}
                 />
               </div>
             </motion.div>
