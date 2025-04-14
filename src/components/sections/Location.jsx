@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaMapMarkerAlt, FaDirections } from 'react-icons/fa';
 import Section from '../ui/Section';
@@ -9,6 +9,27 @@ import Image from 'next/image';
 
 const Location = () => {
   const [mapLoaded, setMapLoaded] = useState(false);
+  const [isMapVisible, setIsMapVisible] = useState(false);
+
+  // טעינת המפה רק כשהיא נראית במסך
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsMapVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const mapElement = document.getElementById('map-container');
+    if (mapElement) {
+      observer.observe(mapElement);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <Section 
@@ -21,23 +42,25 @@ const Location = () => {
         {/* Map */}
         <div className="order-2 lg:order-1">
           <div className="bg-white p-2 rounded-2xl shadow-lg overflow-hidden h-[350px] lg:h-full">
-            <div className="relative w-full h-full rounded-xl overflow-hidden">
+            <div id="map-container" className="relative w-full h-full rounded-xl overflow-hidden">
               {!mapLoaded && (
                 <div className="absolute inset-0 flex items-center justify-center bg-gray-100 z-10">
                   <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#b19470]"></div>
                 </div>
               )}
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3583.6525234180846!2d-80.19847462378226!3d26.067897497772182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9a9cab8be2c25%3A0xb3b5dbe351e9eda3!2s2750%20Griffin%20Rd%2C%20Fort%20Lauderdale%2C%20FL%2033312!5e0!3m2!1sen!2sus!4v1665612345678!5m2!1sen!2sus" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen="" 
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-                onLoad={() => setMapLoaded(true)}
-                title="Map location of Koosh Management Rental"
-              ></iframe>
+              {isMapVisible && (
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3583.6525234180846!2d-80.19847462378226!3d26.067897497772182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9a9cab8be2c25%3A0xb3b5dbe351e9eda3!2s2750%20Griffin%20Rd%2C%20Fort%20Lauderdale%2C%20FL%2033312!5e0!3m2!1sen!2sus!4v1665612345678!5m2!1sen!2sus" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen="" 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  onLoad={() => setMapLoaded(true)}
+                  title="Map location of Koosh Management Rental"
+                ></iframe>
+              )}
             </div>
           </div>
         </div>
