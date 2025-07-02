@@ -80,7 +80,7 @@ const Navbar = () => {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-blue-800 hover:text-blue-600 transition-colors p-2 rounded-lg hover:bg-blue-50"
-              aria-label="Toggle mobile menu"
+              aria-label={t('accessibility.toggleMobileMenu')}
             >
               <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path

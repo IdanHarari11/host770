@@ -3,9 +3,11 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaArrowUp } from 'react-icons/fa';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { t } = useTranslation();
 
   // Check if button should be visible, based on scroll distance
   useEffect(() => {
@@ -38,7 +40,7 @@ const ScrollToTop = () => {
           exit={{ opacity: 0, scale: 0.5 }}
           onClick={scrollToTop}
           className="fixed bottom-6 left-6 z-50 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors"
-          aria-label="Scroll to top"
+          aria-label={t('accessibility.scrollToTop')}
         >
           <FaArrowUp />
         </motion.button>

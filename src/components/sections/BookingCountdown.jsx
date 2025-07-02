@@ -74,7 +74,7 @@ const BookingCountdown = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Only {timeLeft.days} days left to book for this weekend!
+            {t('bookingCountdown.daysLeft').replace('{days}', timeLeft.days)}
           </motion.h3>
           <motion.p 
             className="text-gray-600"
@@ -82,56 +82,55 @@ const BookingCountdown = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Secure your stay at {t('hero.title')} for a perfect getaway
+            {t('bookingCountdown.secureStay').replace('{title}', t('hero.title'))}
           </motion.p>
         </div>
         
-        <div className="flex flex-col items-center">
-          <div className="flex items-center justify-center gap-2 lg:gap-4 mb-4">
-            {/* Days */}
-            <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center gap-4">
+          <div className="text-center">
+            <p className="text-sm text-gray-600 mb-2">{t('bookingCountdown.timeLeft')}</p>
+            <div className="flex gap-3">
+              {/* Days */}
               <motion.div 
-                className="bg-white w-16 lg:w-20 h-16 lg:h-20 rounded-lg shadow-md flex items-center justify-center text-2xl lg:text-3xl font-bold text-blue-600"
+                className="text-center"
                 variants={numberVariants}
                 initial="initial"
                 animate="animate"
                 key={timeLeft.days}
               >
-                {timeLeft.days}
+                <div className="bg-blue-600 text-white rounded-lg px-3 py-2 min-w-[60px]">
+                  <div className="text-2xl font-bold">{timeLeft.days}</div>
+                </div>
+                <div className="text-xs text-gray-600 mt-1">{t('bookingCountdown.days')}</div>
               </motion.div>
-              <span className="text-xs mt-1">days</span>
-            </div>
-            
-            <span className="text-2xl">:</span>
-            
-            {/* Hours */}
-            <div className="flex flex-col items-center">
+              
+              {/* Hours */}
               <motion.div 
-                className="bg-white w-16 lg:w-20 h-16 lg:h-20 rounded-lg shadow-md flex items-center justify-center text-2xl lg:text-3xl font-bold text-blue-600"
+                className="text-center"
                 variants={numberVariants}
                 initial="initial"
                 animate="animate"
                 key={timeLeft.hours}
               >
-                {timeLeft.hours}
+                <div className="bg-blue-500 text-white rounded-lg px-3 py-2 min-w-[60px]">
+                  <div className="text-2xl font-bold">{timeLeft.hours}</div>
+                </div>
+                <div className="text-xs text-gray-600 mt-1">{t('bookingCountdown.hours')}</div>
               </motion.div>
-              <span className="text-xs mt-1">hours</span>
-            </div>
-            
-            <span className="text-2xl">:</span>
-            
-            {/* Minutes */}
-            <div className="flex flex-col items-center">
+              
+              {/* Minutes */}
               <motion.div 
-                className="bg-white w-16 lg:w-20 h-16 lg:h-20 rounded-lg shadow-md flex items-center justify-center text-2xl lg:text-3xl font-bold text-blue-600"
+                className="text-center"
                 variants={numberVariants}
                 initial="initial"
                 animate="animate"
                 key={timeLeft.minutes}
               >
-                {timeLeft.minutes}
+                <div className="bg-blue-400 text-white rounded-lg px-3 py-2 min-w-[60px]">
+                  <div className="text-2xl font-bold">{timeLeft.minutes}</div>
+                </div>
+                <div className="text-xs text-gray-600 mt-1">{t('bookingCountdown.minutes')}</div>
               </motion.div>
-              <span className="text-xs mt-1">minutes</span>
             </div>
           </div>
           
