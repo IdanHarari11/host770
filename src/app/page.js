@@ -23,7 +23,7 @@ function HomeContent() {
           Our properties are located in central areas, near synagogues, kosher restaurants, mikvahs, and mehadrin supermarkets.
         </p>
         <p>
-          What's included: Collaboration with Miami Chabad Houses, apartment kashering before each entry according to required kashrut level, 
+          What&apos;s included: Collaboration with Miami Chabad Houses, apartment kashering before each entry according to required kashrut level, 
           separate beds upon request, fully furnished apartments with kosher kitchen (meat/dairy), hot plate, water heater, linens, towels, 
           washing machine, internet and more.
         </p>

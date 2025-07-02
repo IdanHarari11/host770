@@ -38,7 +38,6 @@ const Gallery = () => {
 
   // Auto-slide
   useEffect(() => {
-    
     const interval = setInterval(() => {
       goToNext();
     }, 5000);
@@ -46,7 +45,6 @@ const Gallery = () => {
     return () => clearInterval(interval);
   }, [goToNext]);
   
-
   return (
     <Section 
       id="gallery" 
@@ -110,7 +108,7 @@ const Gallery = () => {
         </button>
         
         {/* Thumbnails */}
-        <div className="absolute gap-[3rem] bottom-4 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2">
           {images.map((_, index) => (
             <button
               key={index}
