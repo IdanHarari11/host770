@@ -13,51 +13,14 @@ register();
 const GuestFeedback = () => {
   const { t } = useTranslation();
   
-  // Guest reviews data
-  const reviews = [
-    {
-      id: 1,
-      name: 'Sarah & David',
-      date: 'July 2024',
-      rating: 5,
-      text: 'Perfect kosher apartment for our family vacation! The kashering was done professionally and the location near the synagogue was ideal.'
-    },
-    {
-      id: 2,
-      name: 'Rabbi Cohen',
-      date: 'June 2024',
-      rating: 5,
-      text: 'Excellent service from Host770. The apartment was fully kosher-certified and walking distance to minyan. Highly recommended for Torah observant families.'
-    },
-    {
-      id: 3,
-      name: 'Miriam & Yosef',
-      date: 'May 2024',
-      rating: 5,
-      text: 'Amazing experience for our honeymoon! The kosher kitchen was perfectly set up and the staff understood all our religious requirements.'
-    },
-    {
-      id: 4,
-      name: 'Goldstein Family',
-      date: 'April 2024',
-      rating: 4,
-      text: 'Great location with easy access to kosher restaurants and mikvahs. The apartment was clean and well-maintained according to halachic standards.'
-    },
-    {
-      id: 5,
-      name: 'Chaya',
-      date: 'March 2024',
-      rating: 5,
-      text: 'Host770 made our Miami stay worry-free! Everything was kosher and the customer service in Hebrew was excellent. Will definitely return!'
-    },
-    {
-      id: 6,
-      name: 'Shimon',
-      date: 'February 2024',
-      rating: 5,
-      text: 'Business trip made easy with kosher accommodations. The apartment had everything needed for maintaining kashrut away from home.'
-    }
-  ];
+  // Guest reviews data from translation
+  const reviews = t('guestReviews.reviews').map((review, index) => ({
+    id: index + 1,
+    name: review.name,
+    date: review.date,
+    rating: 5, // All reviews have 5 stars
+    text: review.text
+  }));
   
   // Reference to Swiper component
   const swiperRef = useRef(null);
@@ -126,8 +89,8 @@ const GuestFeedback = () => {
   return (
     <Section 
       id="reviews" 
-      title="Guest Reviews"
-      subtitle={`What our guests say about their stay at ${t('hero.title')}`}
+      title={t('guestReviews.title')}
+      subtitle={`${t('guestReviews.subtitle')} ${t('hero.title')}`}
       bgColor="bg-white"
     >
       <div className="relative w-full overflow-hidden py-8">
@@ -174,14 +137,14 @@ const GuestFeedback = () => {
         <button
           onClick={() => swiperRef.current.swiper.slidePrev()}
           className="bg-white border border-gray-200 rounded-full w-10 h-10 flex items-center justify-center shadow-sm hover:bg-gray-50 transition-colors"
-          aria-label="Previous review"
+          aria-label={t('guestReviews.previousReview')}
         >
           <span className="text-lg">‹</span>
         </button>
         <button
           onClick={() => swiperRef.current.swiper.slideNext()}
           className="bg-white border border-gray-200 rounded-full w-10 h-10 flex items-center justify-center shadow-sm hover:bg-gray-50 transition-colors"
-          aria-label="Next review"
+          aria-label={t('guestReviews.nextReview')}
         >
           <span className="text-lg">›</span>
         </button>

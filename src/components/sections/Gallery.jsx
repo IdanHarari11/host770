@@ -9,13 +9,13 @@ import Skeleton from '../ui/Skeleton';
 import { useTranslation } from '@/hooks/useTranslation';
 
 const images = [
-  { url: '/images/v2/WhatsApp Image 2025-04-14 at 01.47.15.jpeg', alt: 'living room' },
+  { url: '/images/v2/WhatsApp Image 2025-04-14 at 01.47.15.jpeg', alt: 'livingRoom' },
   { url: '/images/v2/WhatsApp Image 2025-04-14 at 01.47.15 (1).jpeg', alt: 'bedroom' },
-  { url: '/images/v2/WhatsApp Image 2025-04-14 at 01.47.16.jpeg', alt: 'Living Room' },
-  { url: '/images/v2/WhatsApp Image 2025-04-14 at 01.47.16 (1).jpeg', alt: 'Kitchen' },
+  { url: '/images/v2/WhatsApp Image 2025-04-14 at 01.47.16.jpeg', alt: 'livingRoom' },
+  { url: '/images/v2/WhatsApp Image 2025-04-14 at 01.47.16 (1).jpeg', alt: 'kitchen' },
   { url: '/images/v2/WhatsApp Image 2025-04-14 at 01.47.15 (2).jpeg', alt: 'bedroom' },
-  { url: '/images/v2/WhatsApp Image 2025-04-14 at 01.48.08 (1).jpeg', alt: 'Study' },
-  { url: '/images/38acfcb3-bfa9-41e4-bc69-3ab0b6db18c4.avif', alt: 'living room' },
+  { url: '/images/v2/WhatsApp Image 2025-04-14 at 01.48.08 (1).jpeg', alt: 'study' },
+  { url: '/images/38acfcb3-bfa9-41e4-bc69-3ab0b6db18c4.avif', alt: 'livingRoom' },
   { url: '/images/7a278e47-9e3c-46dd-adda-d54125c62ccb.jpeg', alt: 'bathroom' },
 ];
 
@@ -76,7 +76,7 @@ const Gallery = () => {
               <div className="relative w-full h-full">
                 <Image
                   src={image.url}
-                  alt={image.alt}
+                  alt={t(`gallery.${image.alt}`)}
                   fill
                   sizes="(max-width: 768px) 100vw, 90vw"
                   quality={75}
@@ -94,7 +94,7 @@ const Gallery = () => {
         <button
           onClick={goToPrevious}
           className="absolute top-1/2 left-4 transform -translate-y-1/2 z-20 bg-white bg-opacity-50 p-3 rounded-full text-gray-800 hover:bg-opacity-70 transition-all"
-          aria-label="Previous image"
+          aria-label={t('gallery.previousImage')}
         >
           <FaArrowLeft />
         </button>
@@ -102,7 +102,7 @@ const Gallery = () => {
         <button
           onClick={goToNext}
           className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20 bg-white bg-opacity-50 p-3 rounded-full text-gray-800 hover:bg-opacity-70 transition-all"
-          aria-label="Next image"
+          aria-label={t('gallery.nextImage')}
         >
           <FaArrowRight />
         </button>
@@ -116,7 +116,7 @@ const Gallery = () => {
               className={`w-3 h-3 rounded-full transition-all ${
                 index === currentIndex ? 'bg-blue-600 scale-125' : 'bg-white bg-opacity-50'
               }`}
-              aria-label={`Go to image ${index + 1}`}
+              aria-label={t('gallery.goToImage').replace('{number}', index + 1)}
             />
           ))}
         </div>
@@ -151,7 +151,7 @@ const Gallery = () => {
               <div className="relative w-full h-full">
                 <Image
                   src={img.url}
-                  alt={`Additional apartment image ${index + 1}`}
+                  alt={t('gallery.additionalImage').replace('{number}', index + 1)}
                   fill
                   loading="lazy"
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
