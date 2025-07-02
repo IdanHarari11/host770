@@ -6,6 +6,7 @@ import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 import Section from '../ui/Section';
 import Image from 'next/image';
 import Skeleton from '../ui/Skeleton';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const images = [
   { url: '/images/v2/WhatsApp Image 2025-04-14 at 01.47.15.jpeg', alt: 'living room' },
@@ -19,6 +20,7 @@ const images = [
 ];
 
 const Gallery = () => {
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState(false);
   
@@ -48,9 +50,9 @@ const Gallery = () => {
   return (
     <Section 
       id="gallery" 
-      title="Gallery"
-      subtitle="View our beautifully designed apartments at Griffin Project"
-      bgColor="bg-[#f8f5e6]"
+      title={t('nav.gallery')}
+      subtitle={t('gallery.subtitle')}
+      bgColor="bg-[#f0f4ff]"
     >
       <div className={`
         relative overflow-hidden rounded-2xl shadow-xl
@@ -114,7 +116,7 @@ const Gallery = () => {
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`w-3 h-3 rounded-full transition-all ${
-                index === currentIndex ? 'bg-[#b19470] scale-125' : 'bg-white bg-opacity-50'
+                index === currentIndex ? 'bg-blue-600 scale-125' : 'bg-white bg-opacity-50'
               }`}
               aria-label={`Go to image ${index + 1}`}
             />
@@ -124,7 +126,7 @@ const Gallery = () => {
       
       {/* Grid Gallery */}
       <div className="mt-16">
-        <h3 className="text-2xl font-bold mb-8 text-center text-[#b19470]">More Images</h3>
+        <h3 className="text-2xl font-bold mb-8 text-center text-blue-600">{t('gallery.moreImages')}</h3>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {!imagesLoaded && (
             <>

@@ -42,12 +42,12 @@ export async function sendEmail({ to, subject, html }) {
  * @returns {Promise} - Promise resolved when email is sent
  */
 export async function sendBookingConfirmation(to, bookingDetails) {
-  const subject = `Booking Confirmation - Koosh Management Rental`;
+  const subject = `Booking Confirmation - Host770`;
 
   // Create HTML template for booking confirmation email
   const html = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-      <h1 style="color: #333;">Thank you for your booking at Koosh Management Rental!</h1>
+      <h1 style="color: #333;">Thank you for your booking at Host770!</h1>
       <p>Name: <strong>${bookingDetails.name}</strong></p>
       <p>Booking Date: ${new Date().toLocaleDateString('en-US')}</p>
       
@@ -60,12 +60,12 @@ export async function sendBookingConfirmation(to, bookingDetails) {
       </div>
       
       <p>We have received your booking request and we will contact you shortly to confirm availability and complete the booking process.</p>
-      <p>If you have any questions in the meantime, please don't hesitate to contact us at 954-319-7577.</p>
+      <p>If you have any questions in the meantime, please don't hesitate to contact us.</p>
       
       <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
-        <p>Best regards,<br>Koosh Management Rental Team</p>
-        <p>Phone: 954-319-7577<br>Email: ${process.env.EMAIL_FROM}</p>
-        <p>Address: 2750 Griffin Road, Fort Lauderdale</p>
+        <p>Best regards,<br>Host770 Team</p>
+        <p>Email: ${process.env.EMAIL_FROM}</p>
+        <p>Available 24/6 in Hebrew, English & Spanish</p>
       </div>
     </div>
   `;
@@ -79,7 +79,7 @@ export async function sendBookingConfirmation(to, bookingDetails) {
  * @returns {Promise} - Promise resolved when email is sent
  */
 export async function sendBookingNotification(bookingDetails) {
-  const subject = `New Booking - Koosh Management Rental`;
+  const subject = `New Booking - Host770`;
 
   const html = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
@@ -121,7 +121,7 @@ export async function sendBookingNotification(bookingDetails) {
         ` : ''}
         
         <div style="font-size: 12px; color: #718096; border-top: 1px solid #e2e8f0; padding-top: 12px; margin-top: 20px;">
-          <p>This message was sent automatically from the booking form on the Koosh Management Rental website.</p>
+          <p>This message was sent automatically from the booking form on the Host770 website.</p>
           <p>Date: ${new Date().toLocaleDateString('en-US', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' })}</p>
         </div>
       </div>
@@ -167,7 +167,7 @@ export async function sendContactFormEmail(name, email, message) {
         </div>
         
         <div style="font-size: 12px; color: #718096; border-top: 1px solid #e2e8f0; padding-top: 12px; margin-top: 20px;">
-          <p>This message was sent from the contact form on the Koosh Management Rental website.</p>
+          <p>This message was sent from the contact form on the Host770 website.</p>
           <p>Date: ${new Date().toLocaleDateString('en-US', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' })}</p>
         </div>
       </div>
@@ -199,9 +199,9 @@ export async function sendContactFormEmail(name, email, message) {
         <p>We will get back to you as soon as possible.</p>
         
         <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee;">
-          <p>Best regards,<br>Koosh Management Rental Team</p>
-          <p>Phone: 954-319-7577<br>Email: ${process.env.EMAIL_FROM}</p>
-          <p>Address: 2750 Griffin Road, Fort Lauderdale</p>
+          <p>Best regards,<br>Host770 Team</p>
+          <p>Email: ${process.env.EMAIL_FROM}</p>
+          <p>Available 24/6 in Hebrew, English & Spanish</p>
         </div>
       </div>
     </div>
@@ -209,7 +209,7 @@ export async function sendContactFormEmail(name, email, message) {
   
   return sendEmail({
     to: email,
-    subject: "Your message has been received - Koosh Management Rental",
+    subject: "Your message has been received - Host770",
     html: confirmationHtml
   });
 } 

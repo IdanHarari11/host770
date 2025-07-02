@@ -4,11 +4,11 @@
  * @returns {string} - WhatsApp URL with prefilled message
  */
 export function generateWhatsAppLink(bookingDetails) {
-  const phoneNumber = '19543197577'; // Phone number to send the message to
+  const phoneNumber = '1XXXXXXXXXX'; // Phone number to send the message to
   
   // Create structured message with all booking details
   const message = `
-New Booking from Koosh Management Rental System:
+New Booking from Host770 Kosher Apartments:
 
 Full Name: ${bookingDetails.name}
 Phone: ${bookingDetails.phone}

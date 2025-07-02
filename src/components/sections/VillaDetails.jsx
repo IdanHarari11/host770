@@ -7,24 +7,26 @@ import Card from '../ui/Card';
 import Image from 'next/image';
 import Skeleton from '../ui/Skeleton';
 import { useState } from 'react';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const VillaDetails = () => {
+  const { t } = useTranslation();
   const [imagesLoaded, setImagesLoaded] = useState(false);
   
   const units = [
     {
-      name: 'Fully Furnished & Designed Apartment',
+      name: t('apartments.title'),
       image: '/images/v2/WhatsApp Image 2025-04-14 at 01.47.16 (1).jpeg',
-      desc: 'Modern, White + Cream Aesthetic design, perfect for families & hi-tech professionals.',
+      desc: t('apartments.suitableFor'),
       capacity: 4,
       bedrooms: 2,
       bathrooms: 1,
       features: [
-        { icon: <FaBed />, text: '2 Bedrooms' },
-        { icon: <FaBath />, text: 'Large Central Bathroom' },
-        { icon: <FaUtensils />, text: 'Fully Equipped Kitchen' },
-        { icon: <FaTemperatureHigh />, text: 'Climate Control' },
-        { icon: <FaWifi />, text: 'Free WiFi' },
+        { icon: <FaBed />, text: t('features.fullyFurnished') },
+        { icon: <FaBath />, text: 'Kosher Kitchen Setup' },
+        { icon: <FaUtensils />, text: 'Meat/Dairy Separation Available' },
+        { icon: <FaTemperatureHigh />, text: 'Hot Plate & Water Heater' },
+        { icon: <FaWifi />, text: 'Free WiFi & Modern Amenities' },
       ]
     },
   ];
@@ -32,8 +34,8 @@ const VillaDetails = () => {
   return (
     <Section 
       id="villa-details" 
-      title="Our Apartments"
-      subtitle="Fully Furnished, Fully Equipped, Modern Design"
+      title={t('nav.apartments')}
+      subtitle={t('hero.subtitle')}
       bgColor="bg-white"
     >
       <div className="grid grid-cols-1 md:grid-cols-1 gap-8 max-w-3xl mx-auto">
@@ -61,7 +63,7 @@ const VillaDetails = () => {
                   quality={75}
                   onLoad={() => setImagesLoaded(true)}
                 />
-                <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-bold text-[#b19470] shadow-md">
+                <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-bold text-blue-600 shadow-md">
                   <div className="flex items-center gap-2">
                     <FaUsers />
                     <span>Up to {unit.capacity} people</span>
@@ -69,26 +71,26 @@ const VillaDetails = () => {
                 </div>
               </div>
               
-              <h3 className="text-2xl font-bold mb-2 text-[#b19470]">{unit.name}</h3>
+              <h3 className="text-2xl font-bold mb-2 text-blue-600">{unit.name}</h3>
               <p className="text-gray-600 mb-4">{unit.desc}</p>
               
               <div className="flex items-center gap-4 mb-4">
                 <div className="flex items-center gap-1">
-                  <FaBed className="text-[#b19470]" />
+                  <FaBed className="text-blue-600" />
                   <span>{unit.bedrooms}</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <FaBath className="text-[#b19470]" />
+                  <FaBath className="text-blue-600" />
                   <span>{unit.bathrooms}</span>
                 </div>
               </div>
               
               <div className="mt-auto">
-                <h4 className="font-bold text-lg mb-2">Features Include:</h4>
+                <h4 className="font-bold text-lg mb-2">{t('apartments.features')}:</h4>
                 <ul className="space-y-2">
                   {unit.features.map((feature, i) => (
                     <li key={i} className="flex items-center gap-2">
-                      <span className="text-[#b19470]">{feature.icon}</span>
+                      <span className="text-blue-600">{feature.icon}</span>
                       <span>{feature.text}</span>
                     </li>
                   ))}

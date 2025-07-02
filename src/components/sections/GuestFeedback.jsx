@@ -5,54 +5,57 @@ import { motion } from 'framer-motion';
 import { FaQuoteRight, FaStar } from 'react-icons/fa';
 import Section from '../ui/Section';
 import { register } from 'swiper/element/bundle';
+import { useTranslation } from '@/hooks/useTranslation';
 
 // Register Swiper as a web component
 register();
 
 const GuestFeedback = () => {
+  const { t } = useTranslation();
+  
   // Guest reviews data
   const reviews = [
     {
       id: 1,
-      name: 'Sarah',
+      name: 'Sarah & David',
       date: 'July 2024',
       rating: 5,
-      text: 'Beautiful apartment with modern design. The white and cream aesthetic is perfect. Very clean and has all amenities needed!'
+      text: 'Perfect kosher apartment for our family vacation! The kashering was done professionally and the location near the synagogue was ideal.'
     },
     {
       id: 2,
-      name: 'Joseph',
+      name: 'Rabbi Cohen',
       date: 'June 2024',
       rating: 5,
-      text: 'Perfect place for families. The kids loved the pool and we enjoyed the convenience of the kosher restaurants in the building.'
+      text: 'Excellent service from Host770. The apartment was fully kosher-certified and walking distance to minyan. Highly recommended for Torah observant families.'
     },
     {
       id: 3,
-      name: 'Michelle & Dan',
+      name: 'Miriam & Yosef',
       date: 'May 2024',
       rating: 5,
-      text: 'We spent a perfect weekend at Koosh Management Rental. The apartment is beautifully designed and the location is excellent.'
+      text: 'Amazing experience for our honeymoon! The kosher kitchen was perfectly set up and the staff understood all our religious requirements.'
     },
     {
       id: 4,
-      name: 'Cohen Family',
+      name: 'Goldstein Family',
       date: 'April 2024',
       rating: 4,
-      text: 'The hospitality was excellent and the apartment is equipped to a high standard. We really enjoyed our stay and the attractions in the area.'
+      text: 'Great location with easy access to kosher restaurants and mikvahs. The apartment was clean and well-maintained according to halachic standards.'
     },
     {
       id: 5,
-      name: 'Rebecca',
+      name: 'Chaya',
       date: 'March 2024',
       rating: 5,
-      text: 'Clean, well-maintained and luxurious place. Jacob is an excellent host and takes care of every need. Highly recommended!'
+      text: 'Host770 made our Miami stay worry-free! Everything was kosher and the customer service in Hebrew was excellent. Will definitely return!'
     },
     {
       id: 6,
-      name: 'Alex',
+      name: 'Shimon',
       date: 'February 2024',
       rating: 5,
-      text: 'We came to celebrate a birthday. The apartment is spacious and well-equipped. The kitchen is perfect for cooking shared meals and the building amenities were excellent.'
+      text: 'Business trip made easy with kosher accommodations. The apartment had everything needed for maintaining kashrut away from home.'
     }
   ];
   
@@ -124,7 +127,7 @@ const GuestFeedback = () => {
     <Section 
       id="reviews" 
       title="Guest Reviews"
-      subtitle="What our guests say about their stay at Koosh Management Rental"
+      subtitle={`What our guests say about their stay at ${t('hero.title')}`}
       bgColor="bg-white"
     >
       <div className="relative w-full overflow-hidden py-8">
@@ -137,22 +140,22 @@ const GuestFeedback = () => {
           {reviews.map((review) => (
             <swiper-slide key={review.id} class="h-auto p-4">
               <motion.div 
-                className="bg-[#f8f5e6] rounded-xl shadow-lg p-6 h-full flex flex-col"
+                className="bg-blue-50 rounded-xl shadow-lg p-6 h-full flex flex-col"
                 variants={cardVariants}
                 initial="offscreen"
                 whileInView="onscreen"
                 viewport={{ once: true, amount: 0.3 }}
               >
-                <div className="text-[#b19470] opacity-30 mb-3">
+                <div className="text-blue-600 opacity-30 mb-3">
                   <FaQuoteRight size={24} />
                 </div>
                 
                 <StarRating rating={review.rating} />
                 
-                <p className="text-gray-700 mb-4 flex-grow">"{review.text}"</p>
+                <p className="text-gray-700 mb-4 flex-grow">&ldquo;{review.text}&rdquo;</p>
                 
                 <div className="flex items-center mt-auto">
-                  <div className="flex-shrink-0 h-10 w-10 bg-[#b19470]/20 rounded-full flex items-center justify-center text-[#b19470] font-bold">
+                  <div className="flex-shrink-0 h-10 w-10 bg-blue-600/20 rounded-full flex items-center justify-center text-blue-600 font-bold">
                     {review.name.charAt(0)}
                   </div>
                   <div className="ml-3">

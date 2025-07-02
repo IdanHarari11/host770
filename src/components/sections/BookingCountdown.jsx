@@ -5,8 +5,10 @@ import { motion } from 'framer-motion';
 import { FaClock } from 'react-icons/fa';
 import dayjs from 'dayjs';
 import Button from '../ui/Button';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const BookingCountdown = () => {
+  const { t } = useTranslation();
   // Set target date - upcoming weekend
   const [targetDate, setTargetDate] = useState(null);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0 });
@@ -63,11 +65,11 @@ const BookingCountdown = () => {
   };
   
   return (
-    <div className="bg-gradient-to-l from-[#f8f5e6]/40 to-[#f8f5e6]/80 p-6 lg:p-8 rounded-2xl shadow-lg">
+    <div className="bg-gradient-to-l from-blue-50/40 to-blue-100/80 p-6 lg:p-8 rounded-2xl shadow-lg">
       <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
         <div className="text-center lg:text-left">
           <motion.h3 
-            className="text-2xl lg:text-3xl font-bold mb-3 text-[#b19470]"
+            className="text-2xl lg:text-3xl font-bold mb-3 text-blue-600"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -80,7 +82,7 @@ const BookingCountdown = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Secure your stay at Koosh Management Griffin Project for a perfect getaway
+            Secure your stay at {t('hero.title')} for a perfect getaway
           </motion.p>
         </div>
         
@@ -89,7 +91,7 @@ const BookingCountdown = () => {
             {/* Days */}
             <div className="flex flex-col items-center">
               <motion.div 
-                className="bg-white w-16 lg:w-20 h-16 lg:h-20 rounded-lg shadow-md flex items-center justify-center text-2xl lg:text-3xl font-bold text-[#b19470]"
+                className="bg-white w-16 lg:w-20 h-16 lg:h-20 rounded-lg shadow-md flex items-center justify-center text-2xl lg:text-3xl font-bold text-blue-600"
                 variants={numberVariants}
                 initial="initial"
                 animate="animate"
@@ -105,7 +107,7 @@ const BookingCountdown = () => {
             {/* Hours */}
             <div className="flex flex-col items-center">
               <motion.div 
-                className="bg-white w-16 lg:w-20 h-16 lg:h-20 rounded-lg shadow-md flex items-center justify-center text-2xl lg:text-3xl font-bold text-[#b19470]"
+                className="bg-white w-16 lg:w-20 h-16 lg:h-20 rounded-lg shadow-md flex items-center justify-center text-2xl lg:text-3xl font-bold text-blue-600"
                 variants={numberVariants}
                 initial="initial"
                 animate="animate"
@@ -121,7 +123,7 @@ const BookingCountdown = () => {
             {/* Minutes */}
             <div className="flex flex-col items-center">
               <motion.div 
-                className="bg-white w-16 lg:w-20 h-16 lg:h-20 rounded-lg shadow-md flex items-center justify-center text-2xl lg:text-3xl font-bold text-[#b19470]"
+                className="bg-white w-16 lg:w-20 h-16 lg:h-20 rounded-lg shadow-md flex items-center justify-center text-2xl lg:text-3xl font-bold text-blue-600"
                 variants={numberVariants}
                 initial="initial"
                 animate="animate"
@@ -143,7 +145,7 @@ const BookingCountdown = () => {
               className="flex items-center gap-2"
             >
               <FaClock />
-              <span>Check Availability Now</span>
+              <span>{t('hero.bookNow')}</span>
             </Button>
           </motion.div>
         </div>

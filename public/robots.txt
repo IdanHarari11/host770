@@ -11,4 +11,4 @@ User-agent: Googlebot-Image
 Allow: /images/
 Allow: /gallery/
 
-Sitemap: https://villaorit.co.il/sitemap.xml 
+Sitemap: https://host770.com/sitemap.xml 

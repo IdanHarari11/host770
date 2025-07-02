@@ -5,10 +5,11 @@ import Footer from '@/components/layout/Footer';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 import Script from 'next/script';
 import GoogleTagManager, { GoogleTagManagerNoScript } from '@/components/analytics/GoogleTagManager';
+import { LanguageProvider } from '@/contexts/LanguageContext';
 
-// Rubik font settings for English
+// Rubik font settings for English and Hebrew support
 const rubik = Rubik({
-  subsets: ['latin'],
+  subsets: ['latin', 'hebrew'],
   weight: ['300', '400', '500', '700'],
   variable: '--font-rubik',
   display: 'swap',
@@ -16,9 +17,9 @@ const rubik = Rubik({
 });
 
 export const metadata = {
-  title: 'Koosh Management Rental',
-  description: 'Fully Furnished & Designed Apartments for Rent at Koosh Management, Griffin Project. The building includes 15 fully furnished designer apartments, move-in ready for tenants.',
-  keywords: 'Koosh Management, Rental Apartments, Fort Lauderdale, Fully Furnished, Designer Apartments, Griffin Project, Rental Properties',
+  title: 'Host770 | Kosher Apartments for Rent in Miami',
+  description: 'Host770 - Perfect solution for Torah observant families! Kosher apartments for rent in Miami. Walking distance to synagogues, kosher restaurants, mikvahs, and mehadrin supermarkets.',
+  keywords: 'Host770, Kosher Apartments, Miami Rental, Torah Observant, Chabad, Kosher Kitchen, Miami Jewish, Religious Families, Kosher Certified, Miami Vacation Rental',
 };
 
 export default function RootLayout({ children }) {
@@ -37,21 +38,22 @@ export default function RootLayout({ children }) {
         <meta name="robots" content="index, follow, max-image-preview:large" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Koosh Management Rental" />
-        <meta property="og:description" content="Fully Furnished & Designed Apartments for Rent at Koosh Management, Griffin Project. The building includes 15 fully furnished designer apartments, move-in ready for tenants." />
-        <meta property="og:image" content="https://kooshmanagement.com/images/apartment-view.jpg" />
-        <meta property="og:url" content="https://kooshmanagement.com" />
+        <meta property="og:title" content="Host770 | Kosher Apartments for Rent in Miami" />
+        <meta property="og:description" content="Perfect solution for Torah observant families! Kosher apartments for rent in Miami. Walking distance to synagogues, kosher restaurants, mikvahs, and mehadrin supermarkets." />
+        <meta property="og:image" content="https://host770.com/images/apartment-view.jpg" />
+        <meta property="og:url" content="https://host770.com" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en_US" />
-        <meta property="og:site_name" content="Koosh Management Rental" />
+        <meta property="og:locale:alternate" content="he_IL" />
+        <meta property="og:site_name" content="Host770" />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Koosh Management Rental" />
-        <meta name="twitter:description" content="Fully Furnished & Designed Apartments for Rent at Koosh Management, Griffin Project. The building includes 15 fully furnished designer apartments, move-in ready for tenants." />
-        <meta name="twitter:image" content="https://kooshmanagement.com/images/apartment-view.jpg" />
-        <meta name="twitter:site" content="@kooshmanagement" />
-        <meta name="twitter:creator" content="@kooshmanagement" />
+        <meta name="twitter:title" content="Host770 | Kosher Apartments for Rent in Miami" />
+        <meta name="twitter:description" content="Perfect solution for Torah observant families! Kosher apartments for rent in Miami. Walking distance to synagogues, kosher restaurants, mikvahs, and mehadrin supermarkets." />
+        <meta name="twitter:image" content="https://host770.com/images/apartment-view.jpg" />
+        <meta name="twitter:site" content="@host770" />
+        <meta name="twitter:creator" content="@host770" />
         
         {/* Favicon */}
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -65,10 +67,13 @@ export default function RootLayout({ children }) {
       <body className={`${rubik.variable} font-rubik bg-white text-slate-800`}>
         {/* Google Tag Manager (noscript) */}
         <GoogleTagManagerNoScript gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
-        <Navbar />
-        {children}
-        <ScrollToTop />
-        <Footer />
+        
+        <LanguageProvider>
+          <Navbar />
+          {children}
+          <ScrollToTop />
+          <Footer />
+        </LanguageProvider>
         
         {/* Schema.org data */}
         <Script
@@ -79,18 +84,16 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LodgingBusiness",
-              "name": "Koosh Management Rental",
-              "image": "https://kooshmanagement.com/images/apartment-view.jpg",
-              "description": "Fully Furnished & Designed Apartments for Rent at Koosh Management, Griffin Project. The building includes 15 fully furnished designer apartments, move-in ready for tenants.",
+              "name": "Host770",
+              "image": "https://host770.com/images/apartment-view.jpg",
+              "description": "Perfect solution for Torah observant families! Kosher apartments for rent in Miami. Walking distance to synagogues, kosher restaurants, mikvahs, and mehadrin supermarkets.",
               "address": {
                 "@type": "PostalAddress",
-                "addressLocality": "Fort Lauderdale",
+                "addressLocality": "Miami",
                 "addressRegion": "FL",
-                "postalCode": "33312",
-                "streetAddress": "2750 Griffin Road",
                 "addressCountry": "US"
               },
-              "telephone": "+19543197577",
+              "email": "info@host770.com",
               "priceRange": "$$$",
               "aggregateRating": {
                 "@type": "AggregateRating",
@@ -139,18 +142,18 @@ export default function RootLayout({ children }) {
               "mainEntity": [
                 {
                   "@type": "Question",
-                  "name": "What amenities are included in the Griffin Project building?",
+                  "name": "What kosher amenities are included with Host770 apartments?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "The building includes a pool, gym, synagogue, kosher Mexican restaurant, kosher Italian restaurant, kosher café, UPS store, Super-Pharm, and EV parking."
+                    "text": "Our apartments include kashering service before each entry, kosher kitchen setup (meat/dairy), collaboration with Miami Chabad Houses, and are located near kosher restaurants, mikvahs, and synagogues."
                   }
                 },
                 {
                   "@type": "Question",
-                  "name": "Who are these apartments suitable for?",
+                  "name": "Who are Host770 apartments suitable for?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "These apartments are ideal for families and hi-tech professionals."
+                    "text": "Perfect for religious families, honeymoon couples, business travelers, and Torah observant tourists seeking kosher accommodations in Miami."
                   }
                 }
               ]

@@ -1,14 +1,14 @@
 {
-  "name": "וילה אורית בגלבוע | אירוח יוקרתי בצפון",
-  "short_name": "וילה אורית",
-  "description": "אירוח יוקרתי בוילה אורית בגלבוע עם נוף הרים, בריכות פרטיות ושתי יחידות אירוח מפוארות",
+  "name": "Host770 | Kosher Apartments for Rent in Miami",
+  "short_name": "Host770",
+  "description": "Perfect solution for Torah observant families! Kosher apartments for rent in Miami. Walking distance to synagogues, kosher restaurants, mikvahs, and mehadrin supermarkets.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#4a7c59",
+  "theme_color": "#1e88e5",
   "orientation": "portrait",
-  "dir": "rtl",
-  "lang": "he-IL",
+  "dir": "ltr",
+  "lang": "en-US",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

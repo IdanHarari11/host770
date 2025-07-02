@@ -5,27 +5,39 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Button from '../ui/Button';
 import Skeleton from '../ui/Skeleton';
-
-const backgroundImages = [
-  '/images/7f6dc8f1-3fd1-4a33-a24c-9f349be21a8c.avif',
-  '/images/bf05672d-8bf4-4e89-8842-7a370be30d7a.avif',
-  '/images/dbaac64d-e306-4e05-b51a-111e01ebeda6.avif',
-  '/images/d6f455d7-7608-463a-badd-c7222f20581d.webp',
-];
+import { useTranslation } from '@/hooks/useTranslation';
 
 const Hero = () => {
+  const { t } = useTranslation();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
+  // Modern kosher apartments and living spaces from Unsplash
+  const backgroundImages = [
+    'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2070&auto=format&fit=crop', // Modern apartment living room
+    'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=2070&auto=format&fit=crop', // Modern kitchen with kosher-style design
+    'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=2070&auto=format&fit=crop', // Elegant apartment bedroom
+    'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2070&auto=format&fit=crop', // Modern apartment exterior/balcony view
+    'https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=2070&auto=format&fit=crop', // Clean modern kitchen
+  ];
+
+  const imageDescriptions = [
+    'Modern furnished living room in Miami kosher apartment',
+    'Contemporary kosher kitchen with modern appliances and design',
+    'Elegant bedroom in fully furnished apartment for religious families',
+    'Modern apartment building exterior with balcony view in Miami',
+    'Clean modern kosher kitchen perfect for religious Jewish families'
+  ];
+
   useEffect(() => {
-    const interval = setInterval(() => {
+    const timer = setInterval(() => {
       setCurrentImageIndex((prevIndex) => 
-        prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
+        (prevIndex + 1) % backgroundImages.length
       );
-    }, 6000);
-    
-    return () => clearInterval(interval);
-  }, []);
+    }, 3000);
+
+    return () => clearInterval(timer);
+  }, [backgroundImages.length]);
 
   return (
     <section 
@@ -47,7 +59,7 @@ const Hero = () => {
         >
           <Image
             src={image}
-            alt={`Koosh Management Rental Apartment ${index + 1}`}
+            alt={imageDescriptions[index]}
             fill
             priority={index === 0}
             sizes="100vw"
@@ -72,7 +84,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Fully Furnished & Designed Apartments
+          {t('hero.subtitle')}
         </motion.h1>
         
         <motion.p 
@@ -81,7 +93,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          for Rent at Koosh Management, Griffin Project
+          {t('hero.description')}
         </motion.p>
         
         <motion.div 
@@ -91,14 +103,14 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <Button onClick={() => window.location.href = '#booking'}>
-            Check Availability
+            {t('hero.bookNow')}
           </Button>
           
           <Button 
             variant="secondary"
             onClick={() => window.location.href = 'tel:+19543197577'}
           >
-            Call Now
+            {t('nav.callUs')}
           </Button>
         </motion.div>
       </div>

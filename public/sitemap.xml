@@ -2,54 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://villaorit.co.il</loc>
-    <lastmod>2023-11-01</lastmod>
+    <loc>https://host770.com</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://villaorit.co.il/images/villa-orit-gilboa-panoramic-view.jpg</image:loc>
-      <image:title>נוף פנורמי מוילה אורית בגלבוע</image:title>
-      <image:caption>נוף פנורמי מרהיב להרי הגלבוע הנשקף מחלונות וילה אורית</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://villaorit.co.il/images/villa-orit-gilboa-rooftop-pool.jpg</image:loc>
-      <image:title>בריכה על הגג בוילה אורית</image:title>
-      <image:caption>בריכת שחייה פרטית על הגג בוילה אורית בגלבוע עם נוף פנורמי להרים</image:caption>
-    </image:image>
   </url>
   <url>
-    <loc>https://villaorit.co.il/gallery</loc>
-    <lastmod>2023-11-01</lastmod>
+    <loc>https://host770.com/gallery</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://villaorit.co.il/booking</loc>
-    <lastmod>2023-11-01</lastmod>
+    <loc>https://host770.com/booking</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://villaorit.co.il/faq</loc>
-    <lastmod>2023-11-01</lastmod>
+    <loc>https://host770.com/faq</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://villaorit.co.il/contact</loc>
-    <lastmod>2023-11-01</lastmod>
+    <loc>https://host770.com/contact</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://villaorit.co.il/attractions</loc>
-    <lastmod>2023-11-01</lastmod>
+    <loc>https://host770.com/attractions</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://villaorit.co.il/reviews</loc>
-    <lastmod>2023-11-01</lastmod>
+    <loc>https://host770.com/reviews</loc>
+    <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
