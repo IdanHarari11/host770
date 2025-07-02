@@ -65,7 +65,7 @@ const Footer = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white text-2xl"
-                aria-label="Instagram"
+                aria-label={t('accessibility.instagram')}
               >
                 <FaInstagram />
               </a>
@@ -74,7 +74,7 @@ const Footer = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white text-2xl"
-                aria-label="Facebook"
+                aria-label={t('accessibility.facebook')}
               >
                 <FaFacebook />
               </a>

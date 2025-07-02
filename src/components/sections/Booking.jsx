@@ -54,7 +54,7 @@ const Booking = () => {
       
     } catch (error) {
       console.error('Error processing form:', error);
-      setSubmissionError('An error occurred. Please try again later.');
+      setSubmissionError(t('common.error'));
     } finally {
       setIsSubmitting(false);
     }
@@ -63,8 +63,8 @@ const Booking = () => {
   return (
     <Section 
       id="booking" 
-      title={t('nav.booking')}
-      subtitle={t('hero.bookNow')}
+      title={t('booking.title')}
+      subtitle={t('booking.subtitle')}
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* Contact Form */}
@@ -80,7 +80,7 @@ const Booking = () => {
             
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label htmlFor="name" className="block text-gray-700 mb-1">Full Name</label>
+                <label htmlFor="name" className="block text-gray-700 mb-1">{t('bookingForm.fullName')}</label>
                 <input
                   type="text"
                   id="name"
@@ -89,12 +89,12 @@ const Booking = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                  placeholder="Enter your full name"
+                  placeholder={t('bookingForm.fullNamePlaceholder')}
                 />
               </div>
               
               <div>
-                <label htmlFor="phone" className="block text-gray-700 mb-1">Phone</label>
+                <label htmlFor="phone" className="block text-gray-700 mb-1">{t('bookingForm.phone')}</label>
                 <input
                   type="tel"
                   id="phone"
@@ -103,12 +103,12 @@ const Booking = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                  placeholder="Enter your phone number"
+                  placeholder={t('bookingForm.phonePlaceholder')}
                 />
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-gray-700 mb-1">Email</label>
+                <label htmlFor="email" className="block text-gray-700 mb-1">{t('bookingForm.email')}</label>
                 <input
                   type="email"
                   id="email"
@@ -117,13 +117,13 @@ const Booking = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                  placeholder="Enter your email address"
+                  placeholder={t('bookingForm.emailPlaceholder')}
                 />
               </div>
               
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="guests" className="block text-gray-700 mb-1">Number of Guests</label>
+                  <label htmlFor="guests" className="block text-gray-700 mb-1">{t('bookingForm.guests')}</label>
                   <div className="relative">
                     <select
                       id="guests"
@@ -144,7 +144,7 @@ const Booking = () => {
                 </div>
                 
                 <div>
-                  <label htmlFor="checkIn" className="block text-gray-700 mb-1">Arrival Date</label>
+                  <label htmlFor="checkIn" className="block text-gray-700 mb-1">{t('bookingForm.arrivalDate')}</label>
                   <div className="relative">
                     <input
                       type="date"
@@ -163,7 +163,7 @@ const Booking = () => {
                 </div>
                 
                 <div>
-                  <label htmlFor="checkOut" className="block text-gray-700 mb-1">Departure Date</label>
+                  <label htmlFor="checkOut" className="block text-gray-700 mb-1">{t('bookingForm.departureDate')}</label>
                   <div className="relative">
                     <input
                       type="date"
@@ -183,40 +183,33 @@ const Booking = () => {
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-gray-700 mb-1">Message (Optional)</label>
+                <label htmlFor="message" className="block text-gray-700 mb-1">{t('bookingForm.message')}</label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  rows="3"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
-                  placeholder="Add a message or question..."
-                ></textarea>
+                  rows={4}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                  placeholder={t('bookingForm.messagePlaceholder')}
+                />
               </div>
               
-              <Button 
-                type="submit" 
-                className="w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white"
+              <Button
+                type="submit"
                 disabled={isSubmitting}
+                className="w-full bg-green-600 hover:bg-green-700 text-white flex items-center justify-center gap-2"
               >
-                {isSubmitting ? (
-                  <div className="flex items-center justify-center">
-                    <div className="animate-spin h-5 w-5 border-2 border-white rounded-full border-t-transparent"></div>
-                    <span className="mr-2">{t('common.loading')}</span>
-                  </div>
-                ) : (
-                  <>
-                    <FaWhatsapp size={20} />
-                    <span>{t('contact.sendMessage')}</span>
-                  </>
-                )}
+                <FaWhatsapp />
+                <span>
+                  {isSubmitting ? t('bookingForm.submitting') : t('bookingForm.submit')}
+                </span>
               </Button>
             </form>
           </>
         </div>
         
-        {/* Countdown & Contact Info */}
+        {/* Contact Information & Countdown */}
         <div className="flex flex-col gap-6">
           {/* Booking Countdown */}
           <BookingCountdown />

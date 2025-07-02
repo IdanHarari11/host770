@@ -13,15 +13,15 @@ const Amenities = () => {
   const { t } = useTranslation();
   
   const amenities = [
-    { icon: <FaUsers />, title: t('amenities.pool'), description: 'Partnership with local Chabad centers for enhanced community experience' },
-    { icon: <FaHome />, title: t('amenities.gym'), description: 'Professional kashering according to your required level of kashrut' },
-    { icon: <FaStar />, title: t('amenities.synagogue'), description: 'Convenient walking distance to multiple synagogues' },
-    { icon: <FaUtensils />, title: t('amenities.kosherMexican'), description: 'Easy access to certified kosher dining options' },
-    { icon: <FaCoffee />, title: t('amenities.kosherItalian'), description: 'Fresh kosher baked goods and pastries nearby' },
-    { icon: <FaStore />, title: t('amenities.kosherCafe'), description: 'Religious books, ritual items, and gifts within reach' },
-    { icon: <FaBed />, title: t('amenities.upsStore'), description: 'Accommodation for religious needs and preferences' },
-    { icon: <FaHandHoldingHeart />, title: t('amenities.superPharm'), description: 'Airport transfers, kosher food delivery, Shabbat arrangements' },
-    { icon: <FaWifi />, title: t('amenities.evParking'), description: 'Available 24/6 in Hebrew, English, and Spanish' },
+    { icon: <FaUsers />, title: t('amenities.pool'), description: t('amenities.poolDesc') },
+    { icon: <FaHome />, title: t('amenities.gym'), description: t('amenities.gymDesc') },
+    { icon: <FaStar />, title: t('amenities.synagogue'), description: t('amenities.synagogueDesc') },
+    { icon: <FaUtensils />, title: t('amenities.kosherMexican'), description: t('amenities.kosherMexicanDesc') },
+    { icon: <FaCoffee />, title: t('amenities.kosherItalian'), description: t('amenities.kosherItalianDesc') },
+    { icon: <FaStore />, title: t('amenities.kosherCafe'), description: t('amenities.kosherCafeDesc') },
+    { icon: <FaBed />, title: t('amenities.upsStore'), description: t('amenities.upsStoreDesc') },
+    { icon: <FaHandHoldingHeart />, title: t('amenities.superPharm'), description: t('amenities.superPharmDesc') },
+    { icon: <FaWifi />, title: t('amenities.evParking'), description: t('amenities.evParkingDesc') },
   ];
 
   const container = {
@@ -47,7 +47,7 @@ const Amenities = () => {
     <Section 
       id="amenities" 
       title={t('amenities.title')}
-      subtitle="🏠 Comprehensive Kosher Living Solutions"
+      subtitle={t('amenities.specialNotice')}
       bgColor="bg-[#f0f4ff]"
     >
       <motion.div 

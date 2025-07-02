@@ -84,7 +84,7 @@ const Location = () => {
           >
             <div className="flex items-center gap-2">
               <FaDirections />
-              <span>Get Directions</span>
+              <span>{t('contact.getDirections')}</span>
             </div>
           </Button>
           
@@ -94,7 +94,7 @@ const Location = () => {
             <ul className="space-y-3">
               <li className="flex gap-2">
                 <span className="font-bold">WhatsApp:</span>
-                <span>Available 24/6</span>
+                <span>{t('contact.availableHours')}</span>
               </li>
               <li className="flex gap-2">
                 <span className="font-bold">Phone:</span>
@@ -106,7 +106,7 @@ const Location = () => {
               </li>
               <li className="flex gap-2">
                 <span className="font-bold">Website:</span>
-                <span>www.Host770.com</span>
+                <span>{t('contact.website')}</span>
               </li>
             </ul>
           </div>

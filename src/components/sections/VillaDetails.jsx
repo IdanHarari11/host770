@@ -23,10 +23,10 @@ const VillaDetails = () => {
       bathrooms: 1,
       features: [
         { icon: <FaBed />, text: t('features.fullyFurnished') },
-        { icon: <FaBath />, text: 'Kosher Kitchen Setup' },
-        { icon: <FaUtensils />, text: 'Meat/Dairy Separation Available' },
-        { icon: <FaTemperatureHigh />, text: 'Hot Plate & Water Heater' },
-        { icon: <FaWifi />, text: 'Free WiFi & Modern Amenities' },
+        { icon: <FaBath />, text: t('apartments.kosherKitchen') },
+        { icon: <FaUtensils />, text: t('apartments.meatDairy') },
+        { icon: <FaTemperatureHigh />, text: t('apartments.hotPlate') },
+        { icon: <FaWifi />, text: t('apartments.wifiModern') },
       ]
     },
   ];
@@ -66,7 +66,7 @@ const VillaDetails = () => {
                 <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-bold text-blue-600 shadow-md">
                   <div className="flex items-center gap-2">
                     <FaUsers />
-                    <span>Up to {unit.capacity} people</span>
+                    <span>{t('apartments.upToPeople').replace('{capacity}', unit.capacity)}</span>
                   </div>
                 </div>
               </div>
